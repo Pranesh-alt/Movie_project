@@ -1,0 +1,355 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+    font-weight: bolder;
+    margin: 0;
+    padding: 0;
+    color: white;
+    background-size: cover;
+    background-color: black;
+    background-position: center;
+    cursor: -webkit-grab; cursor: grab;
+    
+}
+.side-bar{
+    background-color: black;
+    width: 25rem;
+    left: -25rem;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    overflow-y: auto;
+    transition: 0.6s ease;
+    transition-property: left;
+    z-index: 10;
+}
+
+.menu-btn i{
+    color: white;
+}
+article{
+    background: #33363a;
+}
+article img{
+    width: 8rem;
+    height: auto;
+    margin: 1rem;
+    margin-left: 7rem;
+    border-radius: 50%;
+    border:  3px solid gray;
+}
+article h1{
+    color: white;
+    
+}
+.close-btn{
+    position: absolute;
+    color: #fff;
+    font-size: 2rem;
+    right: 0;
+    margin: 1rem;
+    cursor: pointer;
+}
+article h1{
+    text-align: center;
+    font-weight: 500;
+    font-size: 2rem;
+    padding-bottom: 1rem;
+    font-family: sans-serif;
+    letter-spacing: 0.2rem;
+}
+.menu{
+    width: 100%;
+    margin-top: 2rem;
+}
+.menu .item{
+    position: relative;
+    cursor: pointer;
+}
+.menu .item a{
+    color: white;
+    font-size: 1rem;
+    text-decoration: none;
+    display: block;
+    padding: 5px 30px;
+    line-height: 5rem;
+}
+.menu i{
+    margin-right: 1rem;
+}
+.item a .dropdown{
+    position: absolute;
+    right: 0;
+    margin: 2rem;
+    transition: 0.3s ease;
+}
+.item .sub-menu{
+    background: #262627;
+    display: none;
+}
+.menu-btn{
+    position: absolute;
+    color: rgb(0,0,0);
+    font-size: 3rem;
+    cursor: pointer;
+    margin: 2rem;
+}
+.side-bar.active{
+    left: 0;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    background-color: black;
+    color: white;
+}
+header h1{
+    margin-top: 1rem;
+}
+.toggle-switch{
+    position: relative;
+    top: 1.5rem;
+    width: 7rem;
+    height: 2rem;
+}
+.slider{
+    position: absolute;
+    width: 80%;
+    height: 120%;
+    background-color: black;
+    border-radius: 2rem;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.checkbox{
+    position: absolute;
+    display: none;
+}
+.slider:has(.checkbox:checked){
+    background-color: #69b0e7;
+}
+body:has(.checkbox:checked){
+    background-color: white;
+    color: black;
+}
+.icon{
+    content:"";
+    position: absolute;
+    top: 10px;
+    left: 1rem;
+    width: 1rem;
+    height: 1.3rem;
+    border-radius: 50%;
+    background-color: black;
+    box-shadow: 
+    inset
+    8px -2px 0px 0px
+    white;
+    transition: 0.4s ease;
+}
+.checkbox:checked+.icon{
+    transform: translateX(50px);
+    background-color: yellow;
+    box-shadow: none;
+}
+.search-container {
+    flex-grow: 1;
+    text-align: center;
+}
+
+.search-container h3 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+.search {
+    display: flex;
+    align-items: center;
+    margin-top: 0.5rem;
+    margin-left: 3rem;
+}
+#myVideo {
+    position: sticky;
+    width: 102%;
+   height: 80%;
+  }
+  
+ 
+  .content {
+    position: sticky;
+    left: 0;
+    background:black;
+    color: white;
+    width: 100%;
+    padding: 1rem;
+}  
+
+h3 {
+    text-align: center;
+    margin: 2rem 0;
+}
+.slide{
+position: relative;
+}
+
+
+.shows, .movies, .Newrel, .Upcomrel,.DCimpmovies,.Marvelimpmovies,.DCanimation,.Marvelanimation {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    width: 100%;
+}
+.contents{
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    background: rgba(0,0,0,0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    opacity: 0;
+    transition: 0.6s;
+    padding: 1rem;
+    border-radius: 1rem;
+}
+.contents:hover{
+    opacity: 1;
+}
+.contents h1{
+    font-size: 2rem;
+    color: #ffe100;
+    margin-top: 0.1rem;
+}
+.contents p{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.9rem;
+    color: #fff;
+}
+.contents> *{
+    transform: translateY(25px);
+    transition: transform 0.6s;
+}
+.contents:hover> *{
+transform: translateY(0px);
+}
+.shows img,
+.movies img,
+.Newrel img,
+.Upcomrel img,
+.DCimpmovies img,.Marvelimpmovies img,.DCanimation img,.Marvelanimation img {
+    display: block;
+    margin: auto;
+    aspect-ratio: 16/13;
+    width: 15rem;
+    height: auto;
+    border-radius: 1rem;
+    transition: all 0.3s ease-in-out;
+    z-index: 20;
+    box-shadow: 10px 10px 53px 0px rgba(0,0,0,0.49);
+}
+
+
+.shows img:hover,
+.movies img:hover,
+.Newrel img:hover,
+.Upcomrel img:hover,
+.DCimpmovies img:hover,.Marvelimpmovies img:hover,.DCanimation img:hover,.Marvelanimation img:hover {
+    transform: scale(1.05);
+    opacity: 0.8;
+    cursor: -webkit-grabbing; cursor: grabbing;
+}
+
+hr {
+    border: 1px solid #444;
+    margin: 20px 0;
+}
+.subscribe {
+    display: flex;
+    justify-content: center ;
+    gap: 5rem;
+    margin: 20px 0;
+    color: white;
+    background-color: black;
+    padding: 1rem;
+}
+
+.subscribe p {
+    margin-bottom: 1rem;
+}
+
+.subscribe-button {
+    padding:  1rem;
+    border: none;
+    border-radius: 5px;
+    background: white;
+    color: black;
+    cursor: pointer;
+}
+
+.subscribe-button:hover {
+    background: whitesmoke;
+}
+
+.footer {
+    background-color: black;
+    color: white;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.footer-bottom {
+    margin-top: 2rem;
+    font-size: 1rem;
+}
+
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: row;
+        align-items: center; 
+    }
+
+    .search-container h3 {
+        font-size: 1.5rem; 
+    }
+
+    .search input {
+        width: 100%; 
+    }
+
+    .shows, .movies, .Newrel, .Upcomrel {
+        flex-direction: row;
+        flex-wrap: wrap; 
+    }
+
+    .slide, .result-item {
+        width: 80%; 
+    }
+}

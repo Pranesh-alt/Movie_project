@@ -1,0 +1,284 @@
+{
+    "MarvelMovies": [
+        {
+            "title": "Iron Man",
+            "image": "Marvel/Iron man.jpg",
+            "description": "When Tony Stark, an industrialist, is captured, he constructs a high-tech armoured suit to escape. Once he manages to escape, he decides to use his suit to fight against evil forces to save the world."
+        },
+        {
+            "title": "The Incredible Hulk",
+            "image": "Marvel/Incredible hulk.jpg",
+            "description": "Dr Bruce Banner subjects himself to high levels of gamma radiation, which triggers his transformation into a huge green creature, the Hulk, whenever he experiences negative emotions such as anger."
+        },
+        {
+            "title": "Iron Man 2",
+            "image": "Marvel/Iron man 2.jpg",
+            "description": "Tony Stark is under pressure from various sources, including the government, to share his technology with the world. He must find a way to fight them while also tackling his other enemies."
+        },
+        {
+            "title": "Thor",
+            "image": "Marvel/Thor.jpg",
+            "description": "Thor is exiled by his father, Odin, the King of Asgard, to the Earth to live among mortals. When he lands on Earth, his trusted weapon Mjolnir is discovered and captured by S.H.I.E.L.D."
+        },
+        {
+            "title": "Captain America: The First Avenger",
+            "image": "Marvel/Captain America First Avenger.jpg",
+            "description": "During World War II, Steve Rogers decides to volunteer in an experiment that transforms his weak body. He must now battle a secret Nazi organisation headed by Johann Schmidt to defend his nation."
+        },
+        {
+            "title": "The Avengers",
+            "image": "Marvel/The Avengers.jpg",
+            "description": "S.H.I.E.L.D. leader Nick Fury is compelled to launch the Avengers programme when Loki poses a threat to planet Earth. But the superheroes must learn to work together if they are to stop him in time."
+        },
+        {
+            "title": "Iron Man 3",
+            "image": "Marvel/Iron man 3.jpg",
+            "description": "Suffering from PTSD, Tony Stark encounters a formidable foe called the Mandarin. When he watches his world fall apart, he must rely on his own instincts as he embarks on a journey of retribution."
+        },
+        {
+            "title": "Thor: The Dark World",
+            "image": "Marvel/Thor dark world.jpg",
+            "description": "While investigating a phenomenon, Jane gets sucked into a wormhole. Thor learns about her disappearance and returns to Earth just as she reappears. But sensing something amiss, he takes her to Asgard."
+        },
+        {
+            "title": "Captain America: The Winter Soldier",
+            "image": "Marvel/Captain America winter soldier.jpg",
+            "description": "Steve Rogers, along with Black Widow and Falcon, must uncover the secrets hidden within S.H.I.E.L.D., while also battling a dangerous new enemy, who is only known as The Winter Soldier."
+        },
+        {
+            "title": "Guardians of the Galaxy",
+            "image": "Marvel/Guardians of the galaxy.jpg",
+            "description": "A bunch of skilled criminals led by brash adventurer Peter Quill join hands to fight a villain named Ronan the Accuser who wants to control the universe with the help of a mystical orb."
+        },
+        {
+            "title": "Avengers: Age of Ultron",
+            "image": "Marvel/Avengers Age of Ultron.jpg",
+            "description": "Tony Stark builds an artificial intelligence system named Ultron with the help of Bruce Banner. When the sentient Ultron makes plans to wipe out the human race, the Avengers set out to stop him."
+        },
+        {
+            "title": "Ant Man",
+            "image": "Marvel/Antman.jpg",
+            "description": "Scott, a master thief, gains the ability to shrink in scale with the help of a futuristic suit. Now he must rise to the occasion of his superhero status and protect his secret from unsavoury elements."
+        },
+        {
+            "title": "Captain America: Civil War",
+            "image": "Marvel/Captain America Civil war.jpg",
+            "description": "When the collective governments decide to ratify the Sokovia Accords, a legal document that regulates superhuman activity, it leads to a discordance between Captain America and Iron Man."
+        },
+        {
+            "title": "Doctor Strange",
+            "image": "Marvel/Doctor strange.jpg",
+            "description": "In an accident, Stephen Strange, a famous neurosurgeon, loses the ability to use his hands. He goes to visit the mysterious Ancient One to heal himself and becomes a great sorcerer under her tutelage."
+        },
+        {
+            "title": "Guardians of the Galaxy Vol 2",
+            "image": "Marvel/Guardians of the galaxy 2.jpg",
+            "description": "A bunch of skilled criminals led by brash adventurer Peter Quill join hands to fight a villain named Ronan the Accuser who wants to control the universe with the help of a mystical orb."
+        },
+        {
+            "title": "Spider-Man: Homecoming",
+            "image": "Marvel/spiderman homecoming.jpg",
+            "description": "Peter Parker tries to stop Adrian 'The Vulture' Toomes from selling weapons made with advanced Chitauri technology while trying to balance his life as an ordinary high school student."
+        },
+        {
+            "title": "Thor: Ragnarok",
+            "image": "Marvel/thor_ragnarok.jpg",
+            "description": "Deprived of his mighty hammer Mjolnir, Thor must escape the other side of the universe to save his home, Asgard, from Hela, the goddess of death."
+        },
+        {
+            "title": "Black Panther",
+            "image": "Marvel/black_panther.jpg",
+            "description": "After his father's death, T'Challa returns home to Wakanda to inherit his throne. However, a powerful enemy related to his family threatens to attack his nation."
+        },
+        {
+            "title": "Avengers: Infinity War",
+            "image": "Marvel/avengers_infinity_war.jpg",
+            "description": "As Thanos sets about his quest for finding the infinity stones and carrying out his twisted scheme, the Avengers join forces with their allies to stop him from causing chaos and destruction."
+        },
+        {
+            "title": "Ant-Man and the Wasp",
+            "image": "Marvel/antman_and_the_wasp.jpg",
+            "description": "Despite being under house arrest, Scott Lang, along with the Wasp, sets out to help Dr Hank Pym to enter the quantum realm as they face new enemies along the way."
+        },
+        {
+            "title": "Captain Marvel",
+            "image": "Marvel/captain_marvel.jpg",
+            "description": "Amidst a mission, Vers, a Kree warrior, gets separated from her team and is stranded on Earth. However, her life takes an unusual turn after she teams up with Fury, a S.H.I.E.L.D. agent."
+        },
+        {
+            "title": "Avengers: Endgame",
+            "image": "Marvel/avengers_endgame.jpg",
+            "description": "After Thanos, an intergalactic warlord, disintegrates half of the universe, the Avengers must reunite and assemble again to reinvigorate their trounced allies and restore balance."
+        },
+        {
+            "title": "Spider-Man: Far From Home",
+            "image": "Marvel/spiderman_far_from_home.jpg",
+            "description": "Peter Parker, the beloved superhero Spider-Man, faces four destructive elemental monsters while on holiday in Europe. Soon, he receives help from Mysterio, a fellow hero with mysterious origins."
+        },
+        {
+            "title": "Black Widow",
+            "image": "Marvel/black_widow.jpg",
+            "description": "Natasha Romanoff, a member of the Avengers and a former KGB spy, is forced to confront her dark past when a conspiracy involving her old handler arises."
+        },
+        {
+            "title": "Shang-Chi and the Legend of the Ten Rings",
+            "image": "Marvel/shangchi_and_the_legend_of_the_ten_rings.jpg",
+            "description": "Shang-Chi, a martial artist, lives a quiet life after he leaves his father and the shadowy Ten Rings organisation behind. Years later, he is forced to confront his past when the Ten Rings attack him."
+        },
+            {
+                "title": "Eternals",
+                "image": "Marvel/eternals.jpg",
+                "description": "A group of ancient aliens who have been living on Earth in secret for thousands of years must reunite to protect humanity from their greatest foes, the Deviants."
+            },
+            {
+                "title": "Spider-Man: No Way Home",
+                "image": "Marvel/spiderman_no_way_home.jpg",
+                "description": "Peter Parker faces his biggest challenge yet as he seeks help from Doctor Strange to restore his secret identity, leading to a multiverse-breaking series of events."
+            },
+            {
+                "title": "Doctor Strange in the Multiverse of Madness",
+                "image": "Marvel/doctor_strange_in_the_multiverse_of_madness.jpg",
+                "description": "Doctor Strange unlocks the secrets of the multiverse, facing new allies and threats in a journey that challenges the very fabric of reality."
+            },
+            {
+                "title": "Thor: Love and Thunder",
+                "image": "Marvel/thor_love_and_thunder.jpg",
+                "description": "Thor embarks on a quest for inner peace but is forced to return to action to stop Gorr the God Butcher from eradicating all gods."
+            },
+            {
+                "title": "Guardians of the Galaxy Vol 3",
+                "image": "Marvel/guardians_of_the_galaxy_vol_three.jpg",
+                "description": "The Guardians face new cosmic adventures and challenges as they protect the galaxy, all while uncovering secrets about Rocket's past."
+            },
+        
+        {
+            "title": "Captain Marvel",
+            "image": "Marvel/The marvels.jpg",
+            "alt": "The Marvels",
+            "description": "Carol Danvers becomes one of the universe's most powerful heroes when Earth is caught in the middle of a galactic war between two alien races."
+          },
+          {
+            "title": "Spider-Man",
+            "image": "Marvel/Spiderman.jpg",
+            "alt": "Spiderman",
+            "description": "Peter Parker faces challenges of young adulthood while balancing his life as the masked superhero Spider-Man, protecting New York from villainous threats."
+          },
+          {
+            "title": "Spider-Man 2",
+            "image": "Marvel/spider_man_two.jpg",
+            "alt": "Spider-Man 2",
+            "description": "Spider-Man confronts his greatest challenges yet as he faces the powerful Dr. Otto Octavius, who has become the deadly supervillain Doctor Octopus."
+          },
+          {
+            "title": "Spider-Man 3",
+            "image": "Marvel/spider_man_three.jpg",
+            "alt": "Spider-Man 3",
+            "description": "Peter Parker grapples with inner darkness and faces foes like the Sandman and Venom in his most personal battle yet."
+          },
+          {
+            "title": "The Amazing Spider-Man",
+            "image": "Marvel/amazing_spiderman_ver2.jpg",
+            "alt": "The Amazing Spider-Man",
+            "description": "Teenager Peter Parker gains spider-like abilities and faces the Lizard, all while uncovering secrets about his family’s mysterious past."
+          },
+          {
+            "title": "The Amazing Spider-Man 2",
+            "image": "Marvel/amazing_spiderman_two.jpg",
+            "alt": "The Amazing Spider-Man 2",
+            "description": "Peter Parker encounters formidable foes like Electro while uncovering deeper secrets about his family’s past and Oscorp's sinister intentions."
+          },
+          {
+            "title": "Venom",
+            "image": "Marvel/venom.jpg",
+            "alt": "Venom",
+            "description": "While trying to take down Carlton, the CEO of Life Foundation, Eddie, a journalist, investigates experiments of human trials. Unwittingly, he gets merged with a symbiotic alien with lethal abilities."
+          },
+          {
+            "title": "Spider-Man: Into the Spider-Verse",
+            "image": "Marvel/spiderman_into_the_spiderverse.jpg",
+            "alt": "Spider-Man: Into the Spider-Verse",
+            "description": "Teenager Miles Morales discovers the multiverse and joins forces with various Spider-People to battle a threat to all dimensions."
+          },
+          {
+            "title": "Spider-Man: Across the Spider-Verse",
+            "image": "Marvel/spiderman_across_the_spiderverse.jpg",
+            "alt": "Spider-Man: Across the Spider-Verse",
+            "description": "Miles Morales ventures further into the multiverse, facing new allies and adversaries in his quest to protect his home dimension."
+          },
+          {
+            "title": "X-Men: First Class",
+            "image": "Marvel/xmen_first_class.jpg",
+            "alt": "X-Men: First Class",
+            "description": "In the 1960s, Charles Xavier and Erik Lehnsherr form a team of mutants to stop a global threat, setting the stage for a future rift between them."
+          },
+          {
+            "title": "X-Men: Days of Future Past",
+            "image": "Marvel/xmen_days_of_future_past_ver5.jpg",
+            "alt": "X-Men: Days of Future Past",
+            "description": "The X-Men send Wolverine to the past to prevent a catastrophic event that could end both humans and mutants."
+          },
+            {
+             "title": "X-Men: Apocalypse",
+                "image": "Marvel/xmen_apocalypse_ver2.jpg",
+                "alt": "XMA",
+                "description": "In a fight for survival against the powerful mutant Apocalypse, the X-Men must unite to prevent a cataclysmic event."
+            },
+            {
+                "title": "X-Men",
+                "image": "Marvel/xmen_ver2.jpg",
+                "alt": "XM",
+                "description": "The original team of mutants is assembled to fight for peace and equality in a world where they are feared and hated."
+            },
+            {
+                "title": "X2: X-Men United",
+                "image": "Marvel/xmen_2.jpg",
+                "alt": "XM2",
+                "description": "The X-Men are forced to team up with their enemy, Magneto, to face a threat that endangers all mutants."
+            },
+            {
+                "title": "X-Men: The Last Stand",
+                "image": "Marvel/x_men_three.jpg",
+                "alt": "XM3",
+                "description": "When a cure is discovered for mutations, the X-Men face a critical decision that could change the future of mutantkind."
+            },
+            {
+                "title": "X-Men Origins: Wolverine",
+                "image": "Marvel/x_men_origins_wolverine.jpg",
+                "alt": "XOW",
+                "description": "Discover Wolverine's tragic past and the forces that shaped him into the fierce fighter he is today."
+            },
+            {
+                "title": "The Wolverine",
+                "image": "Marvel/wolverine.jpg",
+                "alt": "Wolverine",
+                "description": "Logan travels to Japan, where he confronts his own mortality and the possibility of a life without his powers."
+            },
+            {
+                "title": "Logan",
+                "image": "Marvel/logan.jpg",
+                "alt": "Logan",
+                "description": "In a gritty future, an aging Logan takes on one last mission to save a young girl with powers like his own."
+            },
+            {
+                "title": "Deadpool",
+                "image": "Marvel/deadpool.jpg",
+                "alt": "Deadpool",
+                "description": "The Merc with a Mouth, Deadpool, embarks on a mission for revenge while breaking every rule along the way."
+            },
+            {
+                "title": "Deadpool 2",
+                "image": "Marvel/deadpool_two.jpg",
+                "alt": "Deadpool 2",
+                "description": "Deadpool assembles a team of misfits to protect a young mutant from the dangerous Cable."
+            },
+            {
+                "title": "Deadpool & Wolverine",
+                "image": "Marvel/deadpool_and_wolverine.jpg",
+                "alt": "D&W",
+                "description": "The unlikely duo, Deadpool and Wolverine, team up for an action-packed adventure that blends humor and heroism."
+            }
+        ]
+        
+    
+    
+}

@@ -1,0 +1,32 @@
+{
+    "videos": [
+      {
+        "id": "1",
+        "class": "video-js vjs-16-9 vjs-big-play-centered vjs-paused",
+        "controls": true,
+        "poster": "https://watchlastmovies.com/images/mvimg2/27131358-1360.jpg",
+        "preload": "none",
+        "playsinline": true,
+        "webkit-playsinline": true,
+        "source": {
+          "src": "https://tamil.openmv.site/Brother%20(2024)%20HDRip%20Single%20Part%20(720p).mp4",
+          "type": "video/webp",
+          "label": "HD"
+        }
+      },
+      {
+        "id": "2",
+        "class": "video-js vjs-16-9 vjs-big-play-centered vjs-paused",
+        "controls": true,
+        "poster": "https://watchlastmovies.com/images/mvimg2/27131358-1360.jpg",
+        "preload": "none",
+        "playsinline": true,
+        "webkit-playsinline": true,
+        "source": {
+          "src": "https://video-downloads.googleusercontent.com/ADGPM2mGpQrbxVFAGGMEggejIgiuAkpmOhj-P2IKummo53TUub1GztbQj4vG1G4ZajpHkLL5sBGJkjkbIGpujPM3RumwgfWCdcRV_Xirz8_gU1JPQwogPLVplDQiZp6_pVgCoHIXovcdaVk_qRo4oHgVIDqIHIuplaaeoXj4wsm61gz3Nb7-x0skkMQGP3uhkLZZfAuBLn4byM9P43APhe-X4kyvV-CPDjpw6esgqRAmbueAnd6-sXo",
+          "type": "video/webp",
+          "label": "HD"
+        }
+      }
+    ]
+  }

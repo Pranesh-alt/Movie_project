@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix-like Video Player</title>
+    <link href="https://vjs.zencdn.net/7.15.4/video-js.css" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+    <style>
+        /* General body setup */
+        body {
+            margin: 0;
+            padding: 0;
+            background: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+        /* Video container */
+        .video-container {
+            position: relative;
+            width: 80%;
+            max-width: 1280px;
+            margin-bottom: 20px; /* Add space between the two videos */
+        }
+        /* Video styling */
+        .video-js {
+            width: 100%;
+            height: auto;
+            background-color: black;
+        }
+        /* Controls (hidden by default) */
+        .video-js .vjs-control-bar {
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        /* Show controls when mouse is over the video */
+        .video-container:hover .vjs-control-bar {
+            opacity: 1;
+        }
+        /* Play/Pause button styling */
+        .vjs-big-play-button {
+            width: 70px;
+            height: 70px;
+            font-size: 30px;
+            background-color: rgba(255, 255, 255, 0.7);
+            border-radius: 50%;
+            color: #000;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .vjs-big-play-button:hover {
+            background-color: rgba(255, 255, 255, 1);
+        }
+        /* Video progress bar (styled for minimalism) */
+        .vjs-progress-control {
+            background: rgba(255, 255, 255, 0.2);
+            height: 5px;
+        }
+        .vjs-progress-holder {
+            background: #333;
+            height: 5px;
+        }
+        .vjs-play-progress {
+            background: #E50914;
+        }
+        /* Hide video controls when the video is playing (optional feature) */
+        .vjs-playing .vjs-control-bar {
+            opacity: 1;
+        }
+        /* Add custom styling for volume and fullscreen buttons */
+        .vjs-volume-control,
+        .vjs-fullscreen-control {
+            display: none;
+        }
+        .vjs-play-control {
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+        /* Make fullscreen button appear on hover */
+        .video-container:hover .vjs-fullscreen-control {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <!-- Video container (will be dynamically filled) -->
+    <div id="video-container" class="video-container"></div>
+    <!-- Add Video.js Library -->
+    <script src="https://vjs.zencdn.net/7.15.4/video.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Fetch the JSON data from the video-player.json file
+            fetch("./video player.json")  // Replace with your actual file path or URL
+                .then(response => response.json())  // Parse the response as JSON
+                .then(data => {
+                    // Call function to render videos dynamically
+                    renderVideos(data.videos);
+                })
+                .catch(error => {
+                    console.error("Error fetching video config:", error);
+                });
+        });
+
+        // Function to dynamically render videos
+        function renderVideos(videos) {
+            const videoContainer = document.getElementById('video-container');
+            
+            // Loop through each video and create the necessary HTML structure
+            videos.forEach(video => {
+                // Assign unique ID for each video element (to match video.js initialization)
+                const videoId = `my-video-${video.id}`;
+                
+                // Create the HTML string for the video player
+                let videoHTML = `
+                    <div class="video-container">
+                        <video id="${videoId}" class="video-js vjs-default-skin" controls poster="${video.poster}" preload="${video.preload}" playsinline webkit-playsinline>
+                            <source src="${video.source.src}" type="${video.source.type}" label="${video.source.label}">
+                        </video>
+                    </div>
+                `;
+                // Append the video HTML to the container
+                videoContainer.innerHTML += videoHTML;
+
+                // Initialize Video.js player for this video element
+                const player = videojs(videoId);
+
+                player.ready(function() {
+                    console.log(`Video ${video.id} is ready`);
+                });
+            });
+        }
+    </script>
+</body>
+</html>

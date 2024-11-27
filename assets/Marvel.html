@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Marvel Movies</title>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <style>
+        .images{
+            height: 100px;
+        }
+        .movie-card{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: white;
+    color: #f5f5f5;
+    font-weight: bolder;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+    background-color: #101010;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+header h1 {
+    color: #ffe100;
+    font-size: 2rem;
+}
+
+
+#movieGallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: auto;
+}
+
+
+.movie-card {
+    position: relative;
+    background-color: black;
+    color: #f5f5f5;
+    width: 20rem;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    transform: scale(1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.movie-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+}
+
+.images {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.movie-card:hover .images {
+    transform: scale(1.1);
+}
+
+
+.movie-info {
+    padding: 0.1rem;
+    background: rgba(0, 0, 0, 0.8);
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    transform: translateY(100%);
+    transition: transform 0.4s ease-in-out;
+    text-align: center;
+}
+
+.movie-card:hover .movie-info {
+    transform: translateY(0);
+}
+
+.movie-info h2 {
+    font-size: 1rem;
+    color: #ffe100;
+    margin-bottom: 0.5rem;
+    transition: color 0.3s ease;
+}
+
+.movie-info p {
+    font-size: 1rem;
+    color: #ddd;
+    line-height: 1.5;
+}
+
+.movie-info p {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.movie-card:hover .movie-info p {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.movie-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.7));
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    border-radius: 12px;
+}
+
+.movie-card:hover::before {
+    opacity: 1;
+}
+
+@media (max-width: 768px) {
+    #movieGallery {
+        padding: 1rem;
+        gap: 1rem;
+    }
+
+    .movie-card {
+        width: 180px;
+    }
+
+    .movie-info h2 {
+        font-size: 1.2rem;
+    }
+
+    .movie-info p {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .movie-card {
+        width: 100%;
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="Marvel_logo">
+            <a href="Home.html"><i class="fas fa-house"></i></a>
+            <img src="Marvel/Marvel-logo.png" alt="Marvel Logo">
+        </div>
+       
+    </header>
+    
+        
+       
+    
+     <div class="gallery-container" id="movieGallery"></div>
+</body>
+</html>
+ 

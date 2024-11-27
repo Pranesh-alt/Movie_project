@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+        .container {
+            text-align: center;
+            background-color: #ffffff;
+            padding: 50px;
+            width: 20%;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        h1 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+        input[type="email"], input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 8px;
+            box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            font-size: 16px;
+        }
+        button {
+            background-color: #000;
+            color: #fff;
+            padding: 10px 20px;
+            margin: 10px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #333;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 16px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>COMICS <span style="color: red;">TV</span></h1>
+        <form id="signInForm" novalidate>
+            <div class="input-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="input-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div>
+                <button type="button" id="signupButton">Signup</button>
+                <button type="button" id="loginButton">Login</button>
+            </div>
+        </form>
+        <div class="message" id="message"></div>
+    </div>
+
+    <script type="module">
+        // Import necessary Firebase SDKs
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
+        import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-auth.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-analytics.js";
+    
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyCN8UQscHAfxsKfn6tJ5yHtAj00EG3V8zI",
+            authDomain: "comics-tv-8e695.firebaseapp.com",
+            projectId: "comics-tv-8e695",
+            storageBucket: "comics-tv-8e695.appspot.com",
+            messagingSenderId: "457088220613",
+            appId: "1:457088220613:web:529c86c12d13435f6adfac",
+            measurementId: "G-CBWWFMVLKQ"
+        };
+    
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+        const auth = getAuth(app);
+    
+        const signInForm = document.getElementById('signInForm');
+const messageDiv = document.getElementById('message');
+const loginButton = document.getElementById('loginButton');
+const signupButton = document.getElementById('signupButton');
+
+// Error display elements
+const emailInput = signInForm.email;
+const passwordInput = signInForm.password;
+const emailError = document.createElement('div');
+const passwordError = document.createElement('div');
+emailError.style.color = 'red';
+passwordError.style.color = 'red';
+emailInput.parentNode.appendChild(emailError);
+passwordInput.parentNode.appendChild(passwordError);
+
+// Validate fields before action
+function validateFields() {
+    const email = emailInput.value.trim();
+    const password = passwordInput.value.trim();
+    let isValid = true;
+
+    // Clear previous error messages
+    emailError.textContent = '';
+    passwordError.textContent = '';
+    messageDiv.textContent = '';
+
+    // Email validation
+    const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    if (!email) {
+        emailError.textContent = "Email is required.";
+        isValid = false;
+    } else if (!emailPattern.test(email)) {
+        emailError.textContent = "Please enter a valid email address.";
+        isValid = false;
+    }
+
+    // Password validation
+    const upperCasePattern = /[A-Z]/;
+    const lowerCasePattern = /[a-z]/;
+    const numberPattern = /\d/;
+    const symbolPattern = /[!@#$%^&*(),.?":{}|<>]/;
+
+    if (!password) {
+        passwordError.textContent = "Password is required.";
+        isValid = false;
+    } else if (password.length > 30) {
+        passwordError.textContent = "Password is too long. Maximum length is 30 characters.";
+        isValid = false;
+    } else if (password.length < 8) {
+        passwordError.textContent = "Password must be at least 8 characters long.";
+        isValid = false;
+    } else if (!upperCasePattern.test(password)) {
+        passwordError.textContent = "Password must contain at least one uppercase letter.";
+        isValid = false;
+    } else if (!lowerCasePattern.test(password)) {
+        passwordError.textContent = "Password must contain at least one lowercase letter.";
+        isValid = false;
+    } else if (!numberPattern.test(password)) {
+        passwordError.textContent = "Password must contain at least one number.";
+        isValid = false;
+    } else if (!symbolPattern.test(password)) {
+        passwordError.textContent = "Password must contain at least one special character.";
+        isValid = false;
+    }
+
+    return isValid;
+}
+
+// Handle sign-in
+loginButton.addEventListener('click', async (e) => {
+    e.preventDefault();
+    if (!validateFields()) return;
+
+    const email = emailInput.value;
+    const password = passwordInput.value;
+
+    try {
+        const userCredential = await signInWithEmailAndPassword(auth, email, password);
+        const user = userCredential.user;
+        messageDiv.innerHTML = `<p style="color: green;">Welcome back, ${user.email}!</p>`;
+        window.location.href = "/assets/home.html";
+    } catch (error) {
+        messageDiv.innerHTML = `<p style="color: red;">Error: ${error.message}</p>`;
+    }
+});
+
+// Handle sign-up
+signupButton.addEventListener('click', async (e) => {
+    e.preventDefault();
+    if (!validateFields()) return;
+
+    const email = emailInput.value;
+    const password = passwordInput.value;
+
+    try {
+        const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+        const user = userCredential.user;
+        messageDiv.innerHTML = `<p style="color: green;">Account created for ${user.email}!</p>`;
+    } catch (error) {
+        messageDiv.innerHTML = `<p style="color: red;">Error: ${error.message}</p>`;
+    }
+});
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,138 @@
+{"DCMovies":[
+    {   "id": "1",
+        "title": "Superman",
+        "image": "DC/superman.jpg",
+        "description": "The story of Clark Kent, a man from another planet with extraordinary powers who becomes Superman to protect humanity."
+    },
+    {   "id": "1",
+        "title": "Superman II",
+        "image": "DC/superman_ii.jpg",
+        "description": "Superman faces his toughest challenge yet as he goes up against powerful Kryptonian foes who threaten Earth."
+    },
+    {
+        "title": "Batman",
+        "image": "DC/batman.jpg",
+        "description": "Bruce Wayne takes up the mantle of Batman to fight crime in Gotham City, facing villains and his own dark past."
+    },
+    {
+        "title": "Batman Returns",
+        "image": "DC/batman_returns.jpg",
+        "description": "Batman battles against the sinister Penguin and the mysterious Catwoman as they terrorize Gotham City."
+    },
+    {
+        "title": "Batman Begins",
+        "image": "DC/batman_begins.jpg",
+        "description": "The origins of Bruce Wayne’s transformation into Batman as he begins his journey to bring justice to Gotham."
+    },
+    {
+        "title": "The Dark Knight",
+        "image": "DC/dark_knight.jpg",
+        "description": "Batman faces his greatest enemy, the Joker, who plunges Gotham into chaos and tests Batman’s resolve."
+    },
+    {
+        "title": "The Dark Knight Rises",
+        "image": "DC/dark_knight_rises.jpg",
+        "description": "Batman returns from exile to confront the merciless Bane, who threatens to destroy Gotham."
+    },
+    {
+        "title": "Green Lantern",
+        "image": "DC/green_lantern.jpg",
+        "description": "Test pilot Hal Jordan gains superpowers and becomes the Green Lantern to protect Earth and the universe."
+    },
+    {
+        "title": "Constantine",
+        "image": "DC/constantine.jpg",
+        "description": "Demon hunter John Constantine fights dark forces from hell in this supernatural battle for humanity's fate."
+    },
+    {
+        "title": "Watchmen",
+        "image": "DC/watchmen.jpg",
+        "description": "A group of former superheroes is forced out of retirement to investigate the murder of one of their own."
+    },
+    {
+        "title": "Man of Steel",
+        "image": "DC/man_of_steel.jpg",
+        "description": "Clark Kent discovers his alien origin and rises as Superman to protect humanity from an impending threat."
+    },
+    {
+        "title": "Batman vs Superman",
+        "image": "DC/batman_v_superman_dawn_of_justice.jpg",
+        "description": "The epic showdown between Superman and Batman, as they grapple with each other's ideals of justice."
+    },
+    {
+        "title": "Suicide Squad",
+        "image": "DC/suicide_squad.jpg",
+        "description": "A team of imprisoned supervillains is recruited for dangerous missions by the government in exchange for reduced sentences."
+    },
+    {
+        "title": "Wonder Woman",
+        "image": "DC/wonder_woman.jpg",
+        "description": "Amazonian princess Diana ventures into the world of men to stop Ares, the god of war, and bring peace."
+    },
+    {
+        "title": "Aquaman",
+        "image": "DC/aquaman_.jpg",
+        "description": "Arthur Curry, a half-human, half-Atlantean, embarks on a journey to claim his rightful throne in Atlantis."
+    },
+    {
+        "title": "Shazam",
+        "image": "DC/shazam.jpg",
+        "description": "Teenager Billy Batson gains the ability to transform into an adult superhero with powers by saying 'Shazam!'"
+    },
+    {
+        "title": "Wonder Woman 1984",
+        "image": "DC/wonder_woman_84.jpg",
+        "description": "Wonder Woman faces new foes in the 1980s, including the powerful Cheetah and the ambitious Maxwell Lord."
+    },
+    {
+        "title": "Zack Snyder's Justice League",
+        "image": "DC/justice_league.jpg",
+        "description": "Superheroes unite under Batman and Wonder Woman’s leadership to face the cosmic threat of Steppenwolf."
+    },
+    {
+        "title": "The Suicide Squad",
+        "image": "DC/THE suicide_squad.jpg",
+        "description": "An unlikely team of villains undertakes a deadly mission on the island of Corto Maltese to save the world."
+    },
+    {
+        "title": "The Batman",
+        "image": "DC/The batman.jpg",
+        "description": "Batman faces off against the mysterious Riddler in a gritty reimagining of the hero’s early days in Gotham."
+    },
+    {
+        "title": "Black Adam",
+        "image": "DC/black_adam_ver10.jpg",
+        "description": "Teth-Adam rises from slavery to become the powerful Black Adam, challenging the world and heroism itself."
+    },
+    {
+        "title": "Shazam Fury of the Gods",
+        "image": "DC/shazam_fury_of_the_gods_ver8.jpg",
+        "description": "Shazam and his siblings must fight the Daughters of Atlas to protect their world and their family."
+    },
+    {
+        "title": "The Flash",
+        "image": "DC/flash.jpg",
+        "description": "Barry Allen, the fastest man alive, races through time to fix his past and save his loved ones."
+    },
+    {
+        "title": "Blue Beetle",
+        "image": "DC/blue_beetle.jpg",
+        "description": "Jaime Reyes discovers an alien scarab that grants him extraordinary powers, becoming the hero Blue Beetle."
+    },
+    {
+        "title": "Aquaman & The Lost Kingdom",
+        "image": "DC/aquaman_and_the_lost_kingdom.jpg",
+        "description": "Aquaman must protect his kingdom from new threats, forging alliances to prevent a devastating war."
+    },
+    {
+        "title": "Joker",
+        "image": "DC/joker.jpg",
+        "description": "The origin story of the Joker, a man rejected by society who spirals into madness and chaos in Gotham."
+    },
+    {
+        "title": "Joker Folie à Deux",
+        "image": "DC/joker_folie_a_deux.jpg",
+        "description": "The next chapter in the Joker’s story unfolds as he forms a twisted bond with an unlikely ally."
+    }
+]
+}

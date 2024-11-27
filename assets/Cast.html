@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cast</title>
+</head>
+<body>
+    <style>
+    body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    background: linear-gradient(to bottom, #1a1a1a, #0d0d0d);
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #ff6f61; /* Highlighted color */
+}
+
+/* Button Styles */
+button {
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 12px 24px;
+    border-radius: 8px;
+    border: 2px solid transparent;
+    cursor: pointer;
+    outline: none;
+    background-color: black;
+    color: white;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+}
+
+button:hover {
+    color: black;
+    background-color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Movie Details Section */
+#movie-details {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+}
+
+/* Movie Card Styles */
+.movie-card {
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(to bottom right, #333, #222);
+    border-radius: 12px;
+    max-width: 500px;
+    width: 100%;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.movie-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+}
+
+.movie-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-bottom: 2px solid #ff4500;
+}
+
+/* Movie Information */
+.movie-info {
+    padding: 20px;
+    color: #f5f5f5;
+    text-align: center;
+}
+
+.movie-info h2 {
+    font-size: 2rem;
+    color: #ff6f61;
+    margin-bottom: 10px;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
+}
+
+.movie-info p {
+    color: #ccc;
+    margin-bottom: 8px;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.trailer-link {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 20px;
+    background: linear-gradient(to right, #ff6f61, #d93b00);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.trailer-link:hover {
+    background: linear-gradient(to right, #d93b00, #ff6f61);
+    transform: scale(1.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #movie-details {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .movie-card {
+        max-width: 90%;
+    }
+
+    .movie-info h2 {
+        font-size: 1.5rem;
+    }
+
+    .movie-info p {
+        font-size: 0.9rem;
+    }
+
+    .trailer-link {
+        padding: 10px 18px;
+        font-size: 0.9rem;
+    }
+}
+
+/* Subtle Animations */
+.movie-card:hover .movie-image {
+    filter: brightness(1.1) contrast(1.1);
+    transition: filter 0.3s ease;
+}
+
+.movie-info h2::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: #ff6f61;
+    margin: 8px auto 0;
+    transition: width 0.3s ease;
+}
+
+.movie-card:hover h2::after {
+    width: 100px;
+}
+
+.trailer-link:active {
+    transform: scale(0.95);
+}
+    </style>
+    
+    <div id="movie-details"></div>
+</body>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // Extract the movie ID from the URL parameters
+        const params = new URLSearchParams(window.location.search);
+        const movieId = params.get("id");
+        // If no movie ID is found in the URL, show a default message
+        if (!movieId) {
+            document.getElementById("movie-details").innerHTML = "<p>No movie selected.</p>";
+            return;
+        }
+        // Fetch movie data from the JSON file
+        fetch('Data.json')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                // Find the movie with the matching ID
+                const movie = data.movies.find(movie => movie.id === movieId);
+                if (movie) {
+                    // Display movie details if found
+                    displayMovieDetails(movie);
+                } else {
+                    document.getElementById("movie-details").innerHTML = "<p>Movie not found.</p>";
+                }
+            })
+            .catch(error => {
+                console.error("Error fetching movie data:", error);
+                document.getElementById("movie-details").innerHTML = "<p>Unable to load movie details.</p>";
+            });
+    });
+    // Function to display movie details
+    function displayMovieDetails(movie) {
+        const movieDetailsContainer = document.getElementById("movie-details");
+        console.log(movieDetailsContainer);
+        // Set innerHTML using the provided structure
+        movieDetailsContainer.innerHTML = `
+            <div class="movie-card">
+                <img class="movie-image" src="${movie.poster}" alt="${movie.title}">
+                <div class="movie-info">
+                    <h2>${movie.title}</h2>
+                    <p>Release Date: ${movie.releaseDate}</p>
+                    <p>Cast: ${movie.cast.map(castMember => `${castMember.name} as ${castMember.role}`).join(', ')}</p>
+                    <p>Crew: ${movie.crew.map(crewMember => `${crewMember.name} (${crewMember.role})`).join(', ')}</p>
+                    <button><a href="VideoPlayer.html?id=${movie.id}" target="_blank" class="watch-movie-btn">Watch Movie</a></button>
+                </div>
+            </div>
+        `;
+    }
+</script>
+</html>
+
+
+
+

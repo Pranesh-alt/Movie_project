@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Type Filtering</title>
+    <style>
+        .results { margin-top: 20px; }
+        .result { margin: 5px 0; }
+    </style>
+</head>
+<body>
+    <h1>Filter Data</h1>
+    <form id="filterForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name">
+
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" min="0">
+
+        <label for="gender">Gender:</label>
+        <select id="gender" name="gender">
+            <option value="">All</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+        </select>
+
+        <input type="button" value="Filter" onclick="filterResults()">
+    </form>
+
+    <div class="results" id="results"></div>
+
+    <script>
+        const data = [
+            { name: 'Alice', age: 25, gender: 'female' },
+            { name: 'Bob', age: 30, gender: 'male' },
+            { name: 'Charlie', age: 35, gender: 'male' },
+            { name: 'Diana', age: 28, gender: 'female' }
+        ];
+
+        function filterResults() {
+            const nameInput = document.getElementById('name').value.toLowerCase();
+            const ageInput = document.getElementById('age').value;
+            const genderInput = document.getElementById('gender').value;
+
+            const filteredData = data.filter(item => {
+                const matchesName = item.name.toLowerCase().includes(nameInput);
+                const matchesAge = ageInput ? item.age == ageInput : true;
+                const matchesGender = genderInput ? item.gender === genderInput : true;
+
+                return matchesName && matchesAge && matchesGender;
+            });
+
+            displayResults(filteredData);
+        }
+
+        function displayResults(results) {
+            const resultsDiv = document.getElementById('results');
+            resultsDiv.innerHTML = '';
+
+            if (results.length === 0) {
+                resultsDiv.innerHTML = '<div>No results found.</div>';
+                return;
+            }
+
+            results.forEach(item => {
+                const div = document.createElement('div');
+                div.className = 'result';
+                div.textContent = `Name: ${item.name}, Age: ${item.age}, Gender: ${item.gender}`;
+                resultsDiv.appendChild(div);
+            });
+        }
+    </script>
+</body>
+</html>
