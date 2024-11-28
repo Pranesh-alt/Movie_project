@@ -171,7 +171,10 @@ button:hover {
 }
     </style>
     
-    <div id="movie-details"></div>
+    <div id="movie-details">
+        
+    </div>
+
 </body>
 <script>
     document.addEventListener("DOMContentLoaded", function() {
@@ -220,6 +223,7 @@ button:hover {
                     <p>Cast: ${movie.cast.map(castMember => `${castMember.name} as ${castMember.role}`).join(', ')}</p>
                     <p>Crew: ${movie.crew.map(crewMember => `${crewMember.name} (${crewMember.role})`).join(', ')}</p>
                     <button><a href="trial.html?id=${movie.id}" target="_blank" class="watch-movie-btn">Watch Movie</a></button>
+                    <button class="add-to-watchlist">Add to Watchlist</button>
                 </div>
             </div>
         `;

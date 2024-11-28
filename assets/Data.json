@@ -5,7 +5,7 @@
             "title": "Daredevil",
             "releaseDate": "10 Apr, 2015",
             "duration": "4h 02m",
-            "poster": "./assets/Daredevil.jpg ",
+            "poster": "Daredevil.jpg ",
             "cast": [
                 {"name": "Charlie Cox", "role": "Matt Murdock/Daredevil"},
                 {"name": "Vincent D'Onofrio ", "role": "Wilson Fisk/Kingpin"}
@@ -21,7 +21,7 @@
             "title": "Punisher",
             "releaseDate": "17 Nov, 2017",
             "duration": "4h 02m",
-            "poster": "./assets/punisher.jpg",
+            "poster": "punisher.jpg",
             "cast": [
                 {"name": "Jon Bernthal", "role": "Frank Castle"},
                 {"name": "Ebon Moss-Bachrach", "role": "David Lieberman / Micro"}
@@ -538,7 +538,7 @@
             "title": "Flashpoint Paradox",
             "releaseDate": "30 July, 2013",
             "duration": "1h 21m",
-            "poster": "./assets/Flashpointparadox.jpg",
+            "poster": "Flashpointparadox.jpg",
             "cast": [
                 {"name": "Justin Chambers", "role": "Barry Allen / The Flash"},
                 {"name": "C. Thomas Howell", "role": "Eobard Thawne / Professor Zoom"},

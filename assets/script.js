@@ -44,3 +44,26 @@ function renderMovies(movies) {
 fetchMovies();
 
 
+document.getElementById('profile-logo').onclick = function() {
+    const dropdown = document.getElementById('dropdown-menu');
+    dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+};
+// Hide the dropdown if clicked outside
+window.onclick = function(event) {
+    if (!event.target.matches('#profile-logo')) {
+        const dropdown = document.getElementById('dropdown-menu');
+        if (dropdown.style.display === 'block') {
+            dropdown.style.display = 'none';
+        }
+    }
+};
+function logoutUser() {
+    // Your logout functionality here
+    localStorage.removeItem('authToken');
+    sessionStorage.clear();
+    window.location.href = "../index.html";
+}
+window.history.pushState(null, null, window.location.href);
+window.addEventListener('popstate', function () {
+    window.history.pushState(null, null, window.location.href);
+});
