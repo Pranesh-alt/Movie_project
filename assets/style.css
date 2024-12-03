@@ -359,7 +359,11 @@ transform: translateY(0px);
     box-shadow: 10px 10px 53px 0px rgba(0,0,0,0.49);
 }
 
-
+/* Show scrollbars only when necessary */
+.container {
+    overflow: auto;
+  }
+  
 .shows img:hover,
 .movies img:hover,
 .Newrel img:hover,

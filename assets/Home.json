@@ -1,0 +1,312 @@
+{
+    "TopChartTVShows": [
+      {
+        "category": "Marvel",
+        "id": 1,
+        "title": "DAREDEVIL",
+        "description": "Matt Murdock manages to overcome the challenges that he faces due to him being blind since childhood and fights criminals as a lawyer and Daredevil.",
+        "image": "Daredevil.jpg",
+        "link": "Cast.html?id=1"
+      },
+      {
+        "category": "Marvel",
+        "id": 2,
+        "title": "PUNISHER",
+        "description": "Frank Castle uncovers a conspiracy that runs deeper than New York's criminal underworld. Now known as the Punisher.",
+        "image": "punisher.jpg",
+        "link": "Cast.html?id=2"
+      },
+      {
+        "id": 3,
+        "title": "FLASH",
+        "description": "Barry Allen, a forensic investigator in Central City, gains the power of superhuman speed from a freak accident. He decides to use it to fight crime as the Flash, a costumed superhero.",
+        "image": "Flash series.jpg",
+        "link": "Cast.html?id=3"
+      },
+      {
+        "id": 4,
+        "title": "ARROW",
+        "description": "Spoiled billionaire playboy Oliver Queen is missing and presumed dead when his yacht is lost at sea. He returns five years later a changed man, determined to clean up the city as a hooded vigilante armed with a bow.",
+        "image": "Arrow.jpg",
+        "link": "Cast.html?id=4"
+      },
+      {
+        "category": "Marvel",
+        "id": 5,
+        "title": "LOKI",
+        "description": "After stealing the Tesseract, Loki comes into contact with a mysterious organization that gives him an ominous ultimatum, either fix the timeline or cease to exist completely.",
+        "image": "Loki.jpg",
+        "link": "Cast.html?id=5"
+      }
+    ],
+    "TopChartMovies": [
+      {
+        "id": 6,
+        "title": "ZSJL",
+        "description": "Bruce Wayne and Diana Prince try to bring the metahumans of Earth together after the death of Clark Kent. Meanwhile, Darkseid sends Steppenwolf to Earth with a vast army to subjugate humans.",
+        "image": "ZSJL.jpg",
+        "link": "Cast.html?id=6"
+      },
+      {
+        "category": "Marvel",
+        "id": 7,
+        "title": "AVENGERS INFINITY WAR",
+        "description": "As Thanos quest for finding the infinity stones, The Avengers join forces to stop him.",
+        "image": "Infinity war.jpg",
+        "link": "Cast.html?id=7"
+      },
+      {
+        "category": "Marvel",
+        "id": 8,
+        "title": "DARK KNIGHT",
+        "description": "Batman has a new foe, the Joker, who is an accomplished criminal hell-bent on decimating Gotham City. Batman struggles to thwart the Joker.",
+        "image": "Dark knight.jpg",
+        "link": "Cast.html?id=8"
+      },
+      {
+        "category": "Marvel",
+        "id": 9,
+        "title": "AVENGERS ENDGAME",
+        "description": "After Thanos eliminates half of the universe, the Avengers must assemble again to bring their trounced allies & restore balance.",
+        "image": "Endgame.png",
+        "link": "Cast.html?id=9"
+      },
+      {
+        "category": "Marvel",
+        "id": 10,
+        "title": "MAN OF STEEL",
+        "description": "Clark learns about the source of his abilities & his real home when he enters a Kryptonian ship in the Artic. However, an old enemy follows him to Earth in search of a codex and brings destruction.",
+        "image": "Man of steel.jpg",
+        "link": "Cast.html?id=10"
+      }
+    ],
+    "NewestReleases": [
+      {
+        "id": 11,
+        "title": "SUPERMAN & LOIS",
+        "description": "Married with two sons, Jonathan & Jordan, Clark Kent & Lois Lane head back to Smallville to reunite with their closest friends.",
+        "image": "Superman & lois.jpg",
+        "link": "Cast.html?id=11"
+      },
+      {
+        "id": 12,
+        "title": "JOKER: FOLIE à DEUX",
+        "description": "Struggling with his dual identity, failed comedian Arthur Fleck meets the love of his life at Arkham State Hospital.",
+        "image": "Folie deux.jpg",
+        "link": "Cast.html?id=12"
+      },
+      {
+        "category": "Marvel",
+        "id": 13,
+        "title": "VENOM THE LAST DANCE",
+        "description": "Eddie Brock & Venom must make a decision as they're pursued by a military man & alien monsters from Venom's home world.",
+        "image": "Venom 3.png",
+        "link": "Cast.html?id=13"
+      },
+      {
+        "id": 14,
+        "title": "PENGUIN",
+        "description": "The transformation of Oz Cobb from a disfigured nobody to a noted Gotham gangster.",
+        "image": "Penguin.jpg",
+        "link": "Cast.html?id=14"
+      },
+      {
+        "category": "Marvel",
+        "id": 15,
+        "title": "DEADPOOL & WOLVERINE",
+        "description": "Deadpool unites with Wolverine to complete the mission & save his world from an existential Multiverse threat.",
+        "image": "deadpool-and-wolverine.jpg",
+        "link": "Cast.html?id=15"
+      }
+    ],
+    "UpcomingReleases": [
+      {
+        "category": "Marvel",
+        "id": 16,
+        "title": "KRAVEN THE HUNTER",
+        "description": "Kraven's vengeance, motivating him to become the greatest hunter in the world.",
+        "image": "Kraven The Hunter.jpg",
+        "link": "Cast.html?id=16"
+      },
+      {
+        "category": "Marvel",
+        "id": 17,
+        "title": "CAPTAIN AMERICA⁴",
+        "description": "Sam finds himself in the middle of an international incident after meeting with President Thaddeus Ross.",
+        "image": "CABNW.jpg",
+        "link": "Cast.html?id=17"
+      },
+      {
+        "category": "Marvel",
+        "id": 18,
+        "title": "THUNDERBOLTS",
+        "description": "A group of supervillains are recruited to go on missions for the government.",
+        "image": "Thunderbolts.jpg",
+        "link": "Cast.html?id=18"
+      },
+      {
+        "category": "Marvel",
+        "id": 19,
+        "title": "DAREDEVIL BORN AGAIN",
+        "description": "Matt Murdock & Wilson Fisk past identities begin to emerge, both men find themselves on an inevitable collision course.",
+        "image": "Daredevil4.jpg",
+        "link": "Cast.html?id=19"
+      },
+      {
+        "id": 20,
+        "title": "THE BATMAN²",
+        "description": "A sequel to the The Batman(2022).",
+        "image": "Batman2.jpg",
+        "link": "Cast.html?id=20"
+      }
+    ],
+    "DCImprintMovies": [
+      {
+        "id": 21,
+        "title": "WATCHMEN",
+        "description": "Rorschach, a vigilante, investigates the death of another vigilante and warns his former companions that this might be a plan to kill people like them. However, he is exposed to a much darker plot.",
+        "image": "Watchmen.jpeg",
+        "link": "Cast.html?id=21"
+      },
+      {
+        "id": 22,
+        "title": "HISTORY OF VIOLENCE",
+        "description": "Tom, a man with a wife & 2 sons kills 2 robbers in self-defence. Later, a man comes into their lives claiming Tom is not the man he is.",
+        "image": "History of violence.jpg",
+        "link": "Cast.html?id=22"
+      },
+      {
+        "id": 23,
+        "title": "V FOR VENDETTA",
+        "description": "A freedom fighter 'V' uses terrorist tactics to fight the oppressive society.",
+        "image": "V for vendetta.jpg",
+        "link": "Cast.html?id=23"
+      },
+      {
+        "id": 24,
+        "title": "CONSTANTINE",
+        "description": "Detective Angela approaches Constantine, a demon hunter, to help her investigate her twin sister's mysterious death. As he digs deeper, he realizes that demons are trying to enter the human world.",
+        "image": "cONSTANTINE.jpg",
+        "link": "Cast.html?id=24"
+      },
+      {
+        "id": 25,
+        "title": "JONAH HEX",
+        "description": "After his family is murdered by the terrorist Turnbull, a nearly dead Jonah is revived mystically and gains supernatural abilities. Later, the president seeks his help to stop an attack by Turnball.",
+        "image": "Jonah hex.jpg",
+        "link": "Cast.html?id=25"
+      }
+    ],
+    "MarvelImprintMovies": [
+      {
+        "id": 26,
+        "title": "MEN IN BLACK",
+        "description": "Agent J of the MIB investigates a strange murder and uncovers a dangerous alien plot to destroy Earth.",
+        "image": "Men in Black.jpg",
+        "link": "Cast.html?id=26"
+      },
+      {
+        "id": 27,
+        "title": "KINGSMAN",
+        "description": "A young man is recruited by a secret spy agency and is sent on his first mission, which involves foiling a global plot.",
+        "image": "Kingsman.jpg",
+        "link": "Cast.html?id=27"
+      },
+      {
+        "id": 28,
+        "title": "KICK-ASS",
+        "description": "A regular teen decides to become a superhero. However, his life is complicated when he crosses paths with an eccentric father-daughter duo of vigilantes.",
+        "image": "Kick ass.jpg",
+        "link": "Cast.html?id=28"
+      },
+      {
+        "id": 29,
+        "title": "MAN-THING",
+        "description": "A Florida sheriff investigates strange occurrences near a swamp. A terrifying supernatural creature is revealed in the process.",
+        "image": "Man-Thing.jpg",
+        "link": "Cast.html?id=29"
+      },
+      {
+        "id": 30,
+        "title": "MEN IN BLACK 3",
+        "description": "Agent J travels back in time to stop a villain from altering history and destroying the future.",
+        "image": "Men in black 3.jpg",
+        "link": "Cast.html?id=30"
+      }
+    ],
+    "DCAnimation": [
+      {
+        "id": 31,
+        "title": "FLASHPOINT PARADOX",
+        "description": "The Flash alters the timeline while trying to prevent his mother's death, resulting in a dystopian world and a different Justice League.",
+        "image": "Flashpoint paradox.jpg",
+        "link": "Cast.html?id=31"
+      },
+      {
+        "id": 32,
+        "title": "JL WAR",
+        "description": "The Justice League must join forces to face the combined forces of Darkseid and his minions who have come to destroy Earth.",
+        "image": "JL War.jpg",
+        "link": "Cast.html?id=32"
+      },
+      {
+        "id": 33,
+        "title": "TEEN TITANS: THE JUDAS CONTRACT",
+        "description": "The Teen Titans must stop an evil conspiracy involving Terra, who has been manipulated by Deathstroke.",
+        "image": "Teen titans judas.jpg",
+        "link": "Cast.html?id=33"
+      },
+      {
+        "id": 34,
+        "title": "SUICIDE SQUAD: HELL TO PAY",
+        "description": "The Suicide Squad is tasked with retrieving a mystical artifact, and the consequences of failure are dire.",
+        "image": "Suicide Squad hell to pay.jpg",
+        "link": "Cast.html?id=34"
+      },
+      {
+        "id": 35,
+        "title": "SUPERMAN UNBOUND",
+        "description": "Superman must confront the villain Brainiac, who threatens to destroy Earth and the entire city of Metropolis.",
+        "image": "Superman Unbound.jpg",
+        "link": "Cast.html?id=35"
+      }
+    ],
+    "MarvelAnimation": [
+      {
+        "id": 36,
+        "title": "PLANET HULK",
+        "description": "The Hulk is exiled to a distant planet where he becomes a gladiator and has to fight for survival.",
+        "image": "Planet Hulk.jpg",
+        "link": "Cast.html?id=36"
+      },
+      {
+        "id": 37,
+        "title": "INTO THE SPIDERVERSE",
+        "description": "Miles Morales becomes Spider-Man and teams up with other versions of Spider-Man to stop a multiversal villain.",
+        "image": "Into the spiderverse.jpg",
+        "link": "Cast.html?id=37"
+      },
+      {
+        "id": 38,
+        "title": "ULTIMATE AVENGERS",
+        "description": "The Ultimate Avengers team assembles to stop the invading alien force threatening Earth.",
+        "image": "Ultimate Avengers.jpg",
+        "link": "Cast.html?id=38"
+      },
+      {
+        "id": 39,
+        "title": "ACROSS THE SPIDERVERSE",
+        "description": "Miles Morales continues his journey across the multiverse, encountering different versions of Spider-Man.",
+        "image": "Across the spiderverse.jpg",
+        "link": "Cast.html?id=39"
+      },
+      {
+        "id": 40,
+        "title": "BIG HERO 6",
+        "description": "A young robotics prodigy forms a team to fight a masked villain and protect the city of San Fransokyo.",
+        "image": "Big Hero 6.jpg",
+        "link": "Cast.html?id=40"
+      }
+    ]
+  }
+  

@@ -7,35 +7,53 @@
     <script src="script.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <style>
-        .images{
-            height: 100px;
-        }
-        .movie-card{
-            display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
-        }
-body {
+       
+/* Reset some default styles */
+* {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: white;
+    background-color: #121212;
     color: #f5f5f5;
-    font-weight: bolder;
+    font-weight: 500;
+    overflow-x: hidden;
 }
 
 header {
     display: flex;
-    justify-content: center;
-    padding: 1rem;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 1rem 3rem;
     background-color: #101010;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+header .Marvel_logo img {
+    height: 50px;
+    max-width: 150px;
+}
+
+header a {
+    color: #ffe100;
+    font-size: 1.6rem;
+    text-decoration: none;
+    margin-right: 2rem;
 }
 
 header h1 {
+    font-size: 2.2rem;
     color: #ffe100;
-    font-size: 2rem;
+    font-weight: 700;
+    flex-grow: 1;
+    text-align: center;
 }
-
 
 #movieGallery {
     display: flex;
@@ -45,30 +63,33 @@ header h1 {
     padding: 2rem;
     max-width: 1200px;
     margin: auto;
+    animation: fadeIn 1s ease-in-out;
 }
-
 
 .movie-card {
     position: relative;
-    background-color: black;
-    color: #f5f5f5;
-    width: 20rem;
-    border-radius: 1rem;
+    background-color: #1a1a1a;
+    color: #fff;
+    width: 280px;
+    border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-    transform: scale(1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transform: scale(1);
 }
 
 .movie-card:hover {
     transform: scale(1.05);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
 }
 
 .images {
     width: 100%;
-    height: auto;
+    height: 400px;
     object-fit: cover;
     transition: transform 0.5s ease;
 }
@@ -77,15 +98,14 @@ header h1 {
     transform: scale(1.1);
 }
 
-
 .movie-info {
-    padding: 0.1rem;
-    background: rgba(0, 0, 0, 0.8);
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.85);
     position: absolute;
     bottom: 0;
     width: 100%;
     transform: translateY(100%);
-    transition: transform 0.4s ease-in-out;
+    transition: transform 0.5s ease-in-out;
     text-align: center;
 }
 
@@ -94,7 +114,7 @@ header h1 {
 }
 
 .movie-info h2 {
-    font-size: 1rem;
+    font-size: 1.5rem;
     color: #ffe100;
     margin-bottom: 0.5rem;
     transition: color 0.3s ease;
@@ -104,9 +124,7 @@ header h1 {
     font-size: 1rem;
     color: #ddd;
     line-height: 1.5;
-}
-
-.movie-info p {
+    margin: 0;
     opacity: 0;
     transform: translateY(20px);
     transition: opacity 0.4s ease, transform 0.4s ease;
@@ -124,7 +142,7 @@ header h1 {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.7));
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.8));
     opacity: 0;
     transition: opacity 0.5s ease;
     border-radius: 12px;
@@ -134,6 +152,19 @@ header h1 {
     opacity: 1;
 }
 
+/* Adding smooth fade-in animation for gallery */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Media Queries */
 @media (max-width: 768px) {
     #movieGallery {
         padding: 1rem;
@@ -141,26 +172,52 @@ header h1 {
     }
 
     .movie-card {
-        width: 180px;
+        width: 100%;
     }
 
     .movie-info h2 {
-        font-size: 1.2rem;
+        font-size: 1.3rem;
     }
 
     .movie-info p {
-        font-size: 0.8rem;
+        font-size: 0.9rem;
     }
 }
 
 @media (max-width: 480px) {
+    header h1 {
+        font-size: 1.8rem;
+    }
+
     .movie-card {
         width: 100%;
     }
+}
 
-    header h1 {
-        font-size: 1.5rem;
-    }
+/* Adding Scroll Effect for Movie Cards */
+.movie-card {
+    will-change: transform, box-shadow;
+}
+
+.movie-card:hover {
+    transition-timing-function: ease-in-out;
+}
+
+/* Shadow Animation for Buttons on Hover */
+button {
+    background-color: #ffe100;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 8px;
+    color: #121212;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+    background-color: #ffca00;
+    transform: scale(1.05);
 }
 
     </style>

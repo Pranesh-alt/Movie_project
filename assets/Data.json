@@ -37,7 +37,7 @@
             "title": "Flash",
             "releaseDate": "07 Oct, 2014",
             "duration": "4h 02m",
-            "poster": "./assets/Flash series.jpg",
+            "poster": "Flash series.jpg",
             "cast": [
                 {"name": "Grant Gustin ", "role": "Barry Allen / The Flash"},
                 {"name": "Rick Cosnett", "role": "Eddie Thawne / Malcolm Gilmore / Cobalt Blue"},
@@ -54,7 +54,7 @@
             "title": "Arrow",
             "releaseDate": "10 Oct 2012",
             "duration": "4h 02m",
-            "poster": "./assets/Arrow.jpg",
+            "poster": "Arrow.jpg",
             "cast": [
                 {"name": "Stephen Amell", "role": "Oliver Queen / Arrow / Green Arrow"},
                 {"name": "Katie Cassidy ", "role": "Laurel Lance / Black Canary "},
@@ -71,7 +71,7 @@
             "title": "Loki",
             "releaseDate": "09 June, 2021",
             "duration": "4h 02m",
-            "poster": "./assets/Loki.jpg",
+            "poster": "Loki.jpg",
             "cast": [
                 {"name": "Tom Hiddleston", "role": "Loki"},
                 {"name": "Sophia Di Martino", "role": "Sylvie"},
@@ -88,7 +88,7 @@
             "title": "Zack Snyder's Justice League",
             "releaseDate": "18 Mar, 2021",
             "duration": "4h 02m",
-            "poster": "./assets/ZSJL.jpg",
+            "poster": "ZSJL.jpg",
             "cast": [
                 {"name": "Ben Affleck", "role": "Bruce Wayne / Batman"},
                 {"name": "Henry Cavill", "role": "Clark Kent / Superman"},
@@ -107,7 +107,7 @@
             "title": "Avengers Infinity War",
             "releaseDate": "27 Apr, 2018",
             "duration": "2h 29m",
-            "poster": "./assets/Infinity war.jpg",
+            "poster": "Infinity war.jpg",
             "cast": [
                 {"name": "Harish Kalyan", "role": "Lead"},
                 {"name": "Attakathi Dheena", "role": "Supporting"},
@@ -124,7 +124,7 @@
             "title": "The Dark Knight",
             "releaseDate": "18 July, 2008",
             "duration": "2h 32m",
-            "poster": "./assets/Dark knight.jpg",
+            "poster": "Dark knight.jpg",
             "cast": [
                 {"name": "Rajinikanth", "role": "Lead"},
                 {"name": "Nayanthara", "role": "Supporting"},
@@ -142,7 +142,7 @@
             "title": "Avengers Endgame",
             "releaseDate": "18 July, 2008",
             "duration": "2h 32m",
-            "poster": "./assets/Endgame.png",
+            "poster": "Endgame.png",
             "cast": [
                 {"name": "Rajinikanth", "role": "Lead"},
                 {"name": "Nayanthara", "role": "Supporting"},
@@ -160,7 +160,7 @@
             "title": "Man of steel",
             "releaseDate": "18 July, 2008",
             "duration": "2h 32m",
-            "poster": "./assets/Man of steel.jpg",
+            "poster": "Man of steel.jpg",
             "cast": [
                 {"name": "Rajinikanth", "role": "Lead"},
                 {"name": "Nayanthara", "role": "Supporting"},
@@ -178,7 +178,7 @@
             "title": "Superman & lois",
             "releaseDate": "18 July, 2008",
             "duration": "2h 32m",
-            "poster": "./assets/Superman & lois.jpg",
+            "poster": "Superman & lois.jpg",
             "cast": [
                 {"name": "Rajinikanth", "role": "Lead"},
                 {"name": "Nayanthara", "role": "Supporting"},
@@ -196,7 +196,7 @@
             "title": "Joker folie a deux",
             "releaseDate": "18 July, 2008",
             "duration": "2h 32m",
-            "poster": "./assets/Folie deux.jpg",
+            "poster": "Folie deux.jpg",
             "cast": [
                 {"name": "Rajinikanth", "role": "Lead"},
                 {"name": "Nayanthara", "role": "Supporting"},
@@ -214,7 +214,7 @@
             "title": "Venom The Last Dance",
             "releaseDate": "18 July, 2008",
             "duration": "2h 32m",
-            "poster": "./assets/Venom 3.png",
+            "poster": "Venom 3.png",
             "cast": [
                 {"name": "Rajinikanth", "role": "Lead"},
                 {"name": "Nayanthara", "role": "Supporting"},
@@ -232,7 +232,7 @@
             "title": "The Penguin",
             "releaseDate": "18 July, 2008",
             "duration": "2h 32m",
-            "poster": "./assets/Penguin.jpg",
+            "poster": "Penguin.jpg",
             "cast": [
                 {"name": "Rajinikanth", "role": "Lead"},
                 {"name": "Nayanthara", "role": "Supporting"},
@@ -250,7 +250,7 @@
             "title": "Deadpool & Wolverine",
             "releaseDate": "18 July, 2008",
             "duration": "2h 32m",
-            "poster": "./assets/deadpool-and-wolverine.jpg",
+            "poster": "deadpool-and-wolverine.jpg",
             "cast": [
                 {"name": "Rajinikanth", "role": "Lead"},
                 {"name": "Nayanthara", "role": "Supporting"},
