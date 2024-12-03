@@ -58,7 +58,7 @@
 <body>
     <div class="video-player-container">
         <!-- Video Element -->
-        <video id="video" controls>
+        <video id="video" src="" controls>
             Your browser does not support the video tag.
         </video>
         <!-- Controls -->
@@ -73,106 +73,75 @@
         </div>
     </div>
     <script>
-        // Elements
-        const videoElement = document.getElementById("video");
-        const qualitySelector = document.getElementById("quality-selector");
-        const subtitleSelector = document.getElementById("subtitle-selector");
-        // Initialize Shaka Player
-        function initShakaPlayer() {
-            const player = new shaka.Player(videoElement);
-            // Check if Shaka Player is supported
-            if (shaka.Player.isBrowserSupported()) {
-                console.log("Shaka Player is supported");
-                loadVideo(); // Load video once the player is ready
-            } else {
-                alert("Shaka Player is not supported in this browser.");
-            }
-            // Load video from selected quality
-            function loadVideo() {
-                fetchVideoData(); // Fetch video data
-            }
-            // Fetch JSON data
-            async function fetchVideoData() {
-                const params = new URLSearchParams(window.location.search);
-                const videoId = params.get("id"); // Extract video ID from the URL
-                try {
-                    const response = await fetch("movies.json"); // Fetch the JSON file
-                    const videos = await response.json();
-                    // Find the video by ID
-                    const video = videos.find((v) => v.id === videoId);
-                    if (video) {
-                        // Set the initial video source
-                        const videoSrc = video.src[qualitySelector.value] || video.src["720p"];
-                        player.load(videoSrc).then(() => {
-                            console.log("Video loaded successfully");
-                        }).catch((error) => {
-                            console.error("Error loading video:", error);
-                        });
-                        // Populate quality selector
-                        populateQualitySelector(video.src);
-                        // Populate subtitle selector
-                        populateSubtitleSelector(video.subtitles);
-                        // Add event listeners for dynamic changes
-                        qualitySelector.addEventListener("change", (e) => {
-                            updateVideoQuality(video.src, e.target.value);
-                        });
-                        subtitleSelector.addEventListener("change", (e) => {
-                            updateSubtitle(video.subtitles, e.target.value);
-                        });
-                    } else {
-                        alert("Video not found!");
-                    }
-                } catch (error) {
-                    console.error("Error fetching video data:", error);
-                }
-            }
+        async function fetchVideoData() {
+    const params = new URLSearchParams(window.location.search);
+    const videoId = params.get("id"); // Extract video ID from URL
+
+    try {
+        const response = await fetch("movies.json");
+        const videos = await response.json();
+        console.log("Fetched videos:", videos); // Debugging output
+
+        const video = videos.find(v => v.id === videoId);
+
+        if (video) {
+            // Set the initial video source based on quality selector
+            const initialQuality = qualitySelector.value || "720p";
+            const videoSrc = video.src[initialQuality];
+
+            player.load(videoSrc).then(() => {
+                console.log("Video loaded successfully:", videoSrc);
+            }).catch(error => {
+                console.error("Error loading video:", error);
+            });
+
             // Populate quality selector
-            function populateQualitySelector(sources) {
-                qualitySelector.innerHTML = ""; // Clear existing options
-                for (const quality in sources) {
-                    const option = document.createElement("option");
-                    option.value = quality;
-                    option.textContent = quality.toUpperCase();
-                    qualitySelector.appendChild(option);
-                }
-            }
+            populateQualitySelector(video.src);
+
             // Populate subtitle selector
-            function populateSubtitleSelector(subtitles) {
-                subtitleSelector.innerHTML = "<option value=''>None</option>"; // Reset
-                subtitles.forEach((subtitle) => {
-                    const option = document.createElement("option");
-                    option.value = subtitle.src;
-                    option.textContent = subtitle.lang;
-                    subtitleSelector.appendChild(option);
-                });
-            }
-            // Update video quality
-            function updateVideoQuality(sources, quality) {
-                const videoSrc = sources[quality];
-                player.load(videoSrc).then(() => {
-                    console.log(`Video quality changed to ${quality}`);
-                }).catch((error) => {
-                    console.error("Error changing video quality:", error);
-                });
-            }
-            // Update subtitles
-            function updateSubtitle(subtitles, selectedSrc) {
-                const selectedSubtitle = subtitles.find((sub) => sub.src === selectedSrc);
-                if (selectedSubtitle) {
-                    player.load(selectedSubtitle.src).then(() => {
-                        console.log("Subtitle loaded");
-                    }).catch((error) => {
-                        console.error("Error loading subtitle:", error);
-                    });
-                }
-            }
+            populateSubtitleSelector(video.subtitles);
+
+            // Event listeners for changing quality and subtitles
+            qualitySelector.addEventListener("change", (e) => {
+                updateVideoQuality(video.src, e.target.value);
+            });
+
+            subtitleSelector.addEventListener("change", (e) => {
+                updateSubtitle(video.subtitles, e.target.value);
+            });
+
+        } else {
+            alert("Video not found!");
         }
-        // Initialize Shaka Player
-        initShakaPlayer();
+
+    } catch (error) {
+        console.error("Error fetching video data:", error);
+    }
+}
+
+// Function to update video quality
+function updateVideoQuality(sources, quality) {
+    const videoSrc = sources[quality];
+    player.load(videoSrc).then(() => {
+        console.log(`Video quality changed to ${quality}:`, videoSrc);
+    }).catch(error => {
+        console.error("Error changing video quality:", error);
+    });
+}
+
+// Function to update subtitles
+function updateSubtitle(subtitles, selectedSrc) {
+    const selectedSubtitle = subtitles.find(sub => sub.src === selectedSrc);
+    if (selectedSubtitle) {
+        const track = document.createElement("track");
+        track.kind = "subtitles";
+        track.label = selectedSubtitle.lang;
+        track.src = selectedSubtitle.src;
+        videoElement.appendChild(track);
+        console.log("Subtitle loaded:", selectedSubtitle.src);
+    }
+}
+
     </script>
 </body>
 </html>
-
-
-
-
