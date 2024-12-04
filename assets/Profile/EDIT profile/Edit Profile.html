@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Profile</title>
+    <link rel="stylesheet" href="Edit profile.css">
+    
+    <script src="Edit Profile.js"></script>
+</head>
+<body>
+    <div class="edit-profile-container">
+        <h1>Edit Your Profile</h1>
+        <form id="editProfileForm" class="edit-profile-form">
+            <div class="form-group">
+                <label for="profilePic">Profile Picture</label>
+                <img id="previewImage" src="default-avatar.jpg" alt="Profile Preview" class="profile-preview">
+                <div class="button-group">
+                    <input type="file" id="profilePic" accept="image/*">
+                    <label for="profilePic" class="upload-btn">Upload New Picture</label>
+                    <button type="button" id="removePicBtn" class="remove-btn">Remove Picture</button>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="userName">Full Name</label>
+                <input type="text" id="userName" placeholder="Enter your full name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="userEmail">Email</label>
+                <input type="email" id="userEmail" placeholder="Enter your email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="userPassword">New Password</label>
+                <input type="password" id="userPassword" placeholder="Enter new password">
+            </div>
+
+            <button type="submit" class="save-btn">Save Changes</button>
+        </form>
+    </div>
+
+</body>
+</html>
