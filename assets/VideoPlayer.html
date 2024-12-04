@@ -3,136 +3,177 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Netflix-like Video Player</title>
-    <link href="https://vjs.zencdn.net/7.15.4/video-js.css" rel="stylesheet">
-    <!-- <link rel="stylesheet" href="styles.css"> -->
+    <title>Video Player</title>
     <style>
-        /* General body setup */
         body {
+            font-family: Arial, sans-serif;
+            background-color: #000;
+            color: #fff;
             margin: 0;
-            padding: 0;
-            background: #000;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            flex-direction: column;
         }
-        /* Video container */
-        .video-container {
-            position: relative;
+        .video-player-container {
             width: 80%;
-            max-width: 1280px;
-            margin-bottom: 20px; /* Add space between the two videos */
+            max-width: 960px;
+            background-color: #111;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+            padding: 10px;
         }
-        /* Video styling */
-        .video-js {
+        video {
             width: 100%;
             height: auto;
-            background-color: black;
+            border-radius: 10px;
+            background: #000;
         }
-        /* Controls (hidden by default) */
-        .video-js .vjs-control-bar {
-            opacity: 0;
-            transition: opacity 0.3s ease;
+        .controls {
+            margin-top: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
-        /* Show controls when mouse is over the video */
-        .video-container:hover .vjs-control-bar {
-            opacity: 1;
-        }
-        /* Play/Pause button styling */
-        .vjs-big-play-button {
-            width: 70px;
-            height: 70px;
-            font-size: 30px;
-            background-color: rgba(255, 255, 255, 0.7);
-            border-radius: 50%;
-            color: #000;
+        .controls select,
+        .controls button {
+            background-color: #333;
+            color: #fff;
             border: none;
+            padding: 10px;
+            border-radius: 5px;
             cursor: pointer;
-            transition: background-color 0.3s ease;
         }
-        .vjs-big-play-button:hover {
-            background-color: rgba(255, 255, 255, 1);
+        .controls select {
+            width: 150px;
         }
-        /* Video progress bar (styled for minimalism) */
-        .vjs-progress-control {
-            background: rgba(255, 255, 255, 0.2);
-            height: 5px;
-        }
-        .vjs-progress-holder {
-            background: #333;
-            height: 5px;
-        }
-        .vjs-play-progress {
-            background: #E50914;
-        }
-        /* Hide video controls when the video is playing (optional feature) */
-        .vjs-playing .vjs-control-bar {
-            opacity: 1;
-        }
-        /* Add custom styling for volume and fullscreen buttons */
-        .vjs-volume-control,
-        .vjs-fullscreen-control {
-            display: none;
-        }
-        .vjs-play-control {
-            margin-left: 10px;
-            margin-right: 10px;
-        }
-        /* Make fullscreen button appear on hover */
-        .video-container:hover .vjs-fullscreen-control {
-            display: block;
+        .controls button:hover,
+        .controls select:hover {
+            background-color: #555;
         }
     </style>
+    <!-- Shaka Player Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/shaka-player/3.0.3/shaka-player.compiled.js"></script>
 </head>
 <body>
-    <!-- Video container (will be dynamically filled) -->
-    <div id="video-container" class="video-container"></div>
-    <!-- Add Video.js Library -->
-    <script src="https://vjs.zencdn.net/7.15.4/video.js"></script>
+    <div class="video-player-container">
+        <!-- Video Element -->
+        <video id="video" controls>
+            Your browser does not support the video tag.
+        </video>
+        <!-- Controls -->
+        <div class="controls">
+            <select id="quality-selector">
+                <option value="720p">720p</option>
+                <option value="480p">480p</option>
+            </select>
+            <select id="subtitle-selector">
+                <option value="">None</option>
+            </select>
+        </div>
+    </div>
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            // Fetch the JSON data from the video-player.json file
-            fetch("./video player.json")  // Replace with your actual file path or URL
-                .then(response => response.json())  // Parse the response as JSON
-                .then(data => {
-                    // Call function to render videos dynamically
-                    renderVideos(data.videos);
-                })
-                .catch(error => {
-                    console.error("Error fetching video config:", error);
+        // Elements
+        const videoElement = document.getElementById("video");
+        const qualitySelector = document.getElementById("quality-selector");
+        const subtitleSelector = document.getElementById("subtitle-selector");
+        // Initialize Shaka Player
+        function initShakaPlayer() {
+            const player = new shaka.Player(videoElement);
+            // Check if Shaka Player is supported
+            if (shaka.Player.isBrowserSupported()) {
+                console.log("Shaka Player is supported");
+                loadVideo(); // Load video once the player is ready
+            } else {
+                alert("Shaka Player is not supported in this browser.");
+            }
+            // Load video from selected quality
+            function loadVideo() {
+                fetchVideoData(); // Fetch video data
+            }
+            // Fetch JSON data
+            async function fetchVideoData() {
+                const params = new URLSearchParams(window.location.search);
+                const videoId = params.get("id"); // Extract video ID from the URL
+                try {
+                    const response = await fetch("movies.json"); // Fetch the JSON file
+                    const videos = await response.json();
+                    // Find the video by ID
+                    const video = videos.find((v) => v.id === videoId);
+                    if (video) {
+                        // Set the initial video source
+                        const videoSrc = video.src[qualitySelector.value] || video.src["720p"];
+                        player.load(videoSrc).then(() => {
+                            console.log("Video loaded successfully");
+                        }).catch((error) => {
+                            console.error("Error loading video:", error);
+                        });
+                        // Populate quality selector
+                        populateQualitySelector(video.src);
+                        // Populate subtitle selector
+                        populateSubtitleSelector(video.subtitles);
+                        // Add event listeners for dynamic changes
+                        qualitySelector.addEventListener("change", (e) => {
+                            updateVideoQuality(video.src, e.target.value);
+                        });
+                        subtitleSelector.addEventListener("change", (e) => {
+                            updateSubtitle(video.subtitles, e.target.value);
+                        });
+                    } else {
+                        alert("Video not found!");
+                    }
+                } catch (error) {
+                    console.error("Error fetching video data:", error);
+                }
+            }
+            // Populate quality selector
+            function populateQualitySelector(sources) {
+                qualitySelector.innerHTML = ""; // Clear existing options
+                for (const quality in sources) {
+                    const option = document.createElement("option");
+                    option.value = quality;
+                    option.textContent = quality.toUpperCase();
+                    qualitySelector.appendChild(option);
+                }
+            }
+            // Populate subtitle selector
+            function populateSubtitleSelector(subtitles) {
+                subtitleSelector.innerHTML = "<option value=''>None</option>"; // Reset
+                subtitles.forEach((subtitle) => {
+                    const option = document.createElement("option");
+                    option.value = subtitle.src;
+                    option.textContent = subtitle.lang;
+                    subtitleSelector.appendChild(option);
                 });
-        });
-
-        // Function to dynamically render videos
-        function renderVideos(videos) {
-            const videoContainer = document.getElementById('video-container');
-            
-            // Loop through each video and create the necessary HTML structure
-            videos.forEach(video => {
-                // Assign unique ID for each video element (to match video.js initialization)
-                const videoId = `my-video-${video.id}`;
-                
-                // Create the HTML string for the video player
-                let videoHTML = `
-                    <div class="video-container">
-                        <video id="${videoId}" class="video-js vjs-default-skin" controls poster="${video.poster}" preload="${video.preload}" playsinline webkit-playsinline>
-                            <source src="${video.source.src}" type="${video.source.type}" label="${video.source.label}">
-                        </video>
-                    </div>
-                `;
-                // Append the video HTML to the container
-                videoContainer.innerHTML += videoHTML;
-
-                // Initialize Video.js player for this video element
-                const player = videojs(videoId);
-
-                player.ready(function() {
-                    console.log(`Video ${video.id} is ready`);
+            }
+            // Update video quality
+            function updateVideoQuality(sources, quality) {
+                const videoSrc = sources[quality];
+                player.load(videoSrc).then(() => {
+                    console.log(`Video quality changed to ${quality}`);
+                }).catch((error) => {
+                    console.error("Error changing video quality:", error);
                 });
-            });
+            }
+            // Update subtitles
+            function updateSubtitle(subtitles, selectedSrc) {
+                const selectedSubtitle = subtitles.find((sub) => sub.src === selectedSrc);
+                if (selectedSubtitle) {
+                    player.load(selectedSubtitle.src).then(() => {
+                        console.log("Subtitle loaded");
+                    }).catch((error) => {
+                        console.error("Error loading subtitle:", error);
+                    });
+                }
+            }
         }
+        // Initialize Shaka Player
+        initShakaPlayer();
     </script>
 </body>
 </html>
+
+
+
+
+

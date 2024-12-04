@@ -1,0 +1,40 @@
+[
+    {
+        "id": "1",
+        "title": "amaran",
+        "description": "A heartfelt 2018 drama film.",
+        "src": {
+            "720p": "https://dl9.hotshare.online/Moviesda.Mobi_-_Kanguva_2024_Original_720p_HD_V1__950MB_.mp4",
+            "480p": "https://s01.hotshare.link/Moviesda.Mobi_-_School_Diary_2018_Original_480p_HD.mp4"
+        },
+        "subtitles": [
+            {
+                "lang": "English",
+                "src": "path-to-english-subtitles.vtt"
+            },
+            {
+                "lang": "Hindi",
+                "src": "path-to-hindi-subtitles.vtt"
+            }
+        ]
+    },
+    {
+        "id": "2",
+        "title": "amaran",
+        "description": "A heartfelt 2018 drama film.",
+        "src": {
+            "720p": "https://s07.hotshare.link/Moviesda.Mobi_-_Amaran_2024_HDRip_720p_HD__950MB_.mp4",
+            "480p": "https://s01.hotshare.link/Moviesda.Mobi_-_School_Diary_2018_Original_480p_HD.mp4"
+        },
+        "subtitles": [
+            {
+                "lang": "English",
+                "src": "path-to-english-subtitles.vtt"
+            },
+            {
+                "lang": "Hindi",
+                "src": "path-to-hindi-subtitles.vtt"
+            }
+        ]
+    }
+] 

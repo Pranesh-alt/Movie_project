@@ -15,7 +15,21 @@
     margin: 0;
     padding: 0;
 }
+.watchlist-btn {
+    background-color: #ff4757;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-top: 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
 
+.watchlist-btn:hover {
+    background-color: #e84141;
+}
 a {
     text-decoration: none;
     color: white;
@@ -220,10 +234,71 @@ button:hover {
                     <p>Cast: ${movie.cast.map(castMember => `${castMember.name} as ${castMember.role}`).join(', ')}</p>
                     <p>Crew: ${movie.crew.map(crewMember => `${crewMember.name} (${crewMember.role})`).join(', ')}</p>
                     <button><a href="VideoPlayer.html?id=${movie.id}" target="_blank" class="watch-movie-btn">Watch Movie</a></button>
+                    <button class="watchlist-btn" data-id="1" data-title="DAREDEVIL">Add to Watchlist</button>
+
                 </div>
             </div>
         `;
     }
+
+    document.addEventListener('DOMContentLoaded', () => {
+    const watchlistBtns = document.querySelectorAll('.watchlist-btn');
+
+    watchlistBtns.forEach((btn) => {
+        btn.addEventListener('click', function () {
+            const id = this.getAttribute('data-id');
+            const title = this.getAttribute('data-title');
+
+            const watchlist = JSON.parse(localStorage.getItem('watchlist')) || [];
+
+            // Check if the item is already in the watchlist
+            const itemExists = watchlist.some((item) => item.id === id);
+
+            if (!itemExists) {
+                watchlist.push({ id, title });
+                localStorage.setItem('watchlist', JSON.stringify(watchlist));
+                alert(`${title} has been added to your watchlist!`);
+            } else {
+                alert(`${title} is already in your watchlist!`);
+            }
+        });
+    });
+});
+
+// Show modal when an item is added to the watchlist
+function showModal() {
+    const modal = document.getElementById('watchlist-modal');
+    modal.style.display = 'flex'; // Use 'flex' for centering
+    setTimeout(() => {
+        closeModal(); // Automatically close after 3 seconds
+    }, 3000);
+}
+
+// Close modal function
+function closeModal() {
+    const modal = document.getElementById('watchlist-modal');
+    modal.style.display = 'none';
+}
+
+// Close modal on button click
+document.querySelector('.close-btn').addEventListener('click', closeModal);
+
+// Close modal on outside click
+window.addEventListener('click', (event) => {
+    const modal = document.getElementById('watchlist-modal');
+    if (event.target === modal) {
+        closeModal();
+    }
+});
+
+// Example add to watchlist function
+function addToWatchlist(item) {
+    // Your logic to add item to the watchlist
+    console.log(`${item} added to watchlist.`);
+    
+    // Show the modal pop-up
+    showModal();
+}
 </script>
 </html>
 
