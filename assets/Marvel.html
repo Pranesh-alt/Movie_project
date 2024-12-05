@@ -8,131 +8,75 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <style>
        
-/* Reset some default styles */
-* {
+       * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #121212;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #101010, #1c1c1c);
     color: #f5f5f5;
-    font-weight: 500;
+    font-weight: 600;
+    line-height: 1.6;
     overflow-x: hidden;
 }
 
+/* Header Styles */
 header {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    padding: 1rem 3rem;
-    background-color: #101010;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    padding: 2rem 5%;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(10px);
     position: sticky;
     top: 0;
     z-index: 100;
-}
-
-header .Marvel_logo img {
-    height: 50px;
-    max-width: 150px;
-}
-
-header a {
-    color: #ffe100;
-    font-size: 1.6rem;
-    text-decoration: none;
-    margin-right: 2rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    animation: fadeInDown 1s ease-out;
 }
 
 header h1 {
-    font-size: 2.2rem;
-    color: #ffe100;
-    font-weight: 700;
-    flex-grow: 1;
-    text-align: center;
+    font-size: 3rem;
+    color: #ff5722;
+    text-shadow: 0 0 10px rgba(255, 87, 34, 0.8);
+    font-weight: 800;
+    letter-spacing: 2px;
 }
 
+header img {
+    height: 60px;
+    filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.5));
+}
+
+/* Movie Gallery */
 #movieGallery {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-    justify-content: center;
-    padding: 2rem;
-    max-width: 1200px;
-    margin: auto;
-    animation: fadeIn 1s ease-in-out;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+    gap: 2rem;
+    padding: 3rem 5%;
+    max-width: 1600px;
+    margin: 0 auto;
+    animation: fadeInUp 1.5s ease-out;
 }
 
 .movie-card {
     position: relative;
-    background-color: #1a1a1a;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
     color: #fff;
-    width: 280px;
-    border-radius: 12px;
+    border-radius: 1.5rem;
     overflow: hidden;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    transform: scale(1);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+    perspective: 1000px;
 }
 
 .movie-card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
-}
-
-.images {
-    width: 100%;
-    height: 400px;
-    object-fit: cover;
-    transition: transform 0.5s ease;
-}
-
-.movie-card:hover .images {
-    transform: scale(1.1);
-}
-
-.movie-info {
-    padding: 1rem;
-    background: rgba(0, 0, 0, 0.85);
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    transform: translateY(100%);
-    transition: transform 0.5s ease-in-out;
-    text-align: center;
-}
-
-.movie-card:hover .movie-info {
-    transform: translateY(0);
-}
-
-.movie-info h2 {
-    font-size: 1.5rem;
-    color: #ffe100;
-    margin-bottom: 0.5rem;
-    transition: color 0.3s ease;
-}
-
-.movie-info p {
-    font-size: 1rem;
-    color: #ddd;
-    line-height: 1.5;
-    margin: 0;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.4s ease, transform 0.4s ease;
-}
-
-.movie-card:hover .movie-info p {
-    opacity: 1;
-    transform: translateY(0);
+    transform: rotateY(20deg) scale(1.05);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.9);
 }
 
 .movie-card::before {
@@ -142,82 +86,124 @@ header h1 {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.8));
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8));
+    opacity: 0.8;
+}
+
+.images {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 1s ease;
+}
+
+.movie-card:hover .images {
+    transform: scale(1.2) rotate(5deg);
+}
+
+.movie-info {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 1.5rem;
+    background: rgba(0, 0, 0, 0.8);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    transform: translateY(100%);
+    transition: transform 0.6s ease-in-out;
+    text-align: center;
+}
+
+.movie-card:hover .movie-info {
+    transform: translateY(0);
+}
+
+.movie-info h2 {
+    font-size: 1.5rem;
+    color: #ffeb3b;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 0.5rem;
+    animation: glow 2s infinite alternate;
+}
+
+.movie-info p {
+    font-size: 1rem;
+    color: #f5f5f5;
     opacity: 0;
-    transition: opacity 0.5s ease;
-    border-radius: 12px;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
-.movie-card:hover::before {
+.movie-card:hover .movie-info p {
     opacity: 1;
+    transform: translateY(0);
 }
 
-/* Adding smooth fade-in animation for gallery */
-@keyframes fadeIn {
-    0% {
+/* Button Styling */
+.movie-info button {
+    background: linear-gradient(135deg, #ff5722, #ff9800);
+    color: #fff;
+    padding: 0.8rem 2rem;
+    border: none;
+    border-radius: 50px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: transform 0.4s ease;
+    margin-top: 1rem;
+    box-shadow: 0 8px 15px rgba(255, 87, 34, 0.3);
+}
+
+.movie-info button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 12px 30px rgba(255, 87, 34, 0.5);
+}
+
+/* Animations */
+@keyframes fadeInDown {
+    from {
         opacity: 0;
-        transform: translateY(20px);
+        transform: translateY(-50px);
     }
-    100% {
+    to {
         opacity: 1;
         transform: translateY(0);
     }
 }
 
-/* Media Queries */
-@media (max-width: 768px) {
-    #movieGallery {
-        padding: 1rem;
-        gap: 1rem;
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
     }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
-    .movie-card {
-        width: 100%;
+@keyframes glow {
+    from {
+        text-shadow: 0 0 8px rgba(255, 235, 59, 0.6);
+    }
+    to {
+        text-shadow: 0 0 16px rgba(255, 235, 59, 1);
+    }
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
     }
 
     .movie-info h2 {
-        font-size: 1.3rem;
+        font-size: 1.2rem;
     }
 
     .movie-info p {
         font-size: 0.9rem;
     }
-}
-
-@media (max-width: 480px) {
-    header h1 {
-        font-size: 1.8rem;
-    }
-
-    .movie-card {
-        width: 100%;
-    }
-}
-
-/* Adding Scroll Effect for Movie Cards */
-.movie-card {
-    will-change: transform, box-shadow;
-}
-
-.movie-card:hover {
-    transition-timing-function: ease-in-out;
-}
-
-/* Shadow Animation for Buttons on Hover */
-button {
-    background-color: #ffe100;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    font-weight: bold;
-    border-radius: 8px;
-    color: #121212;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-button:hover {
-    background-color: #ffca00;
-    transform: scale(1.05);
 }
 
     </style>
