@@ -5,52 +5,155 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Video Player</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #000;
-            color: #fff;
-            margin: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-        .video-player-container {
-            width: 80%;
-            max-width: 960px;
-            background-color: #111;
-            border-radius: 10px;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
-            padding: 10px;
-        }
-        video {
-            width: 100%;
-            height: auto;
-            border-radius: 10px;
-            background: #000;
-        }
-        .controls {
-            margin-top: 10px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .controls select,
-        .controls button {
-            background-color: #333;
-            color: #fff;
-            border: none;
-            padding: 10px;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        .controls select {
-            width: 150px;
-        }
-        .controls button:hover,
-        .controls select:hover {
-            background-color: #555;
-        }
+       body {
+    font-family: 'Arial', sans-serif;
+    background-color: #141414;
+    color: #fff;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    background: linear-gradient(135deg, #2b2d42, #8d99ae);
+}
+
+.video-player-container {
+    width: 90%;
+    max-width: 1024px;
+    background: linear-gradient(135deg, rgba(0,0,0,0.85), rgba(0,0,0,0.7));
+    border-radius: 20px;
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    overflow: hidden;
+    position: relative;
+    backdrop-filter: blur(10px);
+}
+
+video {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    background-color: #000;
+    transition: transform 0.3s ease;
+}
+
+video:hover {
+    transform: scale(1.05);
+}
+
+.controls {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    z-index: 2;
+}
+
+.controls select,
+.controls button {
+    background-color: rgba(50, 50, 50, 0.7);
+    color: #fff;
+    border: none;
+    padding: 12px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.controls select {
+    width: 160px;
+    font-size: 16px;
+    background-color: rgba(60, 60, 60, 0.9);
+}
+
+.controls button:hover,
+.controls select:hover {
+    background-color: #f56a79;
+    box-shadow: 0 4px 12px rgba(255, 105, 180, 0.6);
+    transform: scale(1.1);
+}
+
+.controls .play-pause-btn {
+    background-color: rgba(255, 255, 255, 0.7);
+    color: #000;
+    font-size: 18px;
+    border-radius: 50%;
+    padding: 12px;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.controls .play-pause-btn:hover {
+    background-color: #f56a79;
+    transform: scale(1.2);
+    box-shadow: 0 4px 15px rgba(255, 105, 180, 0.6);
+}
+
+.controls .volume {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+.controls .volume input {
+    width: 120px;
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    height: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.controls .volume input[type="range"]:hover {
+    background-color: #f56a79;
+}
+
+.controls .speed {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.controls .speed select {
+    background-color: rgba(80, 80, 80, 0.8);
+    color: #fff;
+    border-radius: 5px;
+    padding: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.controls .speed select:hover {
+    background-color: #f56a79;
+    transform: scale(1.1);
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.video-player-container {
+    animation: fadeIn 1s ease-out;
+}
+
     </style>
     <!-- Shaka Player Library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/shaka-player/3.0.3/shaka-player.compiled.js"></script>
