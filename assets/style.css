@@ -28,11 +28,11 @@ body {
 }
 
 .profile-icon {
-    width: 40px;
-    height: 40px;
+    width: 2rem;
+    height: 2rem;
     background-color: #444;
     border-radius: 50%;
-    background-image: url('./Batman2.jpg'); /* Replace with actual image */
+    background-image: url('../assets/DC.jpg'); /* Replace with actual image */
     background-size: cover;
     background-position: center;
     transition: transform 0.3s ease;

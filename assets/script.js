@@ -67,3 +67,49 @@ window.history.pushState(null, null, window.location.href);
 window.addEventListener('popstate', function () {
     window.history.pushState(null, null, window.location.href);
 });
+
+
+
+
+
+
+function generateHTML(data) {
+    let htmlContent = '';
+    
+    // Append Shows
+    htmlContent += '<h3>Top Chart:TV shows</h3><div class="shows">';
+    data.shows.forEach(show => {
+      htmlContent += `
+      <div class="slide" data-category="${show.category}">
+        <a href="${show.link}">
+          <img src="${show.image}" alt="${show.title}">
+          <div class="contents">
+            <h1>${show.title}</h1>
+            <p>${show.description}</p>
+          </div>
+        </a>
+      </div>`;
+    });
+    htmlContent += '</div>';
+  
+    // Append Movies
+    htmlContent += '<h3>Top Chart:Movies</h3><div class="movies">';
+    data.movies.forEach(movie => {
+      htmlContent += `
+      <div class="slide">
+        <a href="${movie.link}">
+          <img src="${movie.image}" alt="${movie.title}">
+          <div class="contents">
+            <h1>${movie.title}</h1>
+            <p>${movie.description}</p>
+          </div>
+        </a>
+      </div>`;
+    });
+    htmlContent += '</div>';
+  
+    return htmlContent;
+  }
+  
+  // Append the generated HTML to an element
+  document.getElementById("content-area").innerHTML += generateHTML(jsonData);
