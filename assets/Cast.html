@@ -3,10 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cast</title>
+    <title>Movie Details</title>
+    
 </head>
 <body>
-    <style>
+
+<div id="movie-details" class="movie-details-container">
+    
+</div>
+
+                       
+<div id="myModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Movie Added to Watchlist</h2>
+        <p>Your movie has been successfully added to the watchlist!</p>
+    </div>
+</div>
+<style>
+      .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.4);
+            overflow: auto;
+            padding-top: 60px;
+        }
+        .modal-content {
+            background-color: #222;
+            margin: 5% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 400px;
+            color: white;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .close {
+            color: #aaa;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .close:hover,
+        .close:focus {
+            color: white;
+            text-decoration: none;
+            cursor: pointer;
+        }
     body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-weight: bold;
@@ -15,7 +64,21 @@
     margin: 0;
     padding: 0;
 }
+.watchlist-btn {
+    background-color: #ff4757;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-top: 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
 
+.watchlist-btn:hover {
+    background-color: #e84141;
+}
 a {
     text-decoration: none;
     color: white;
@@ -169,70 +232,99 @@ button:hover {
 .trailer-link:active {
     transform: scale(0.95);
 }
-    </style>
-    
-    <div id="movie-details">
-        
-    </div>
 
-</body>
+
+
+</style>
 <script>
-    document.addEventListener("DOMContentLoaded", function() {
-        // Extract the movie ID from the URL parameters
-        const params = new URLSearchParams(window.location.search);
-        const movieId = params.get("id");
-        // If no movie ID is found in the URL, show a default message
-        if (!movieId) {
-            document.getElementById("movie-details").innerHTML = "<p>No movie selected.</p>";
-            return;
-        }
-        // Fetch movie data from the JSON file
-        fetch('Data.json')
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
-                }
-                return response.json();
-            })
-            .then(data => {
-                // Find the movie with the matching ID
-                const movie = data.movies.find(movie => movie.id === movieId);
-                if (movie) {
-                    // Display movie details if found
-                    displayMovieDetails(movie);
-                } else {
-                    document.getElementById("movie-details").innerHTML = "<p>Movie not found.</p>";
-                }
-            })
-            .catch(error => {
-                console.error("Error fetching movie data:", error);
-                document.getElementById("movie-details").innerHTML = "<p>Unable to load movie details.</p>";
-            });
-    });
-    // Function to display movie details
-    function displayMovieDetails(movie) {
-        const movieDetailsContainer = document.getElementById("movie-details");
-        console.log(movieDetailsContainer);
-        // Set innerHTML using the provided structure
-        movieDetailsContainer.innerHTML = `
-            <div class="movie-card">
-                <img class="movie-image" src="${movie.poster}" alt="${movie.title}">
-                <div class="movie-info">
-                    <h2>${movie.title}</h2>
-                    <p>Release Date: ${movie.releaseDate}</p>
-                    <p>Cast: ${movie.cast.map(castMember => `${castMember.name} as ${castMember.role}`).join(', ')}</p>
-                    <p>Crew: ${movie.crew.map(crewMember => `${crewMember.name} (${crewMember.role})`).join(', ')}</p>
-                    <button><a href="trial.html?id=${movie.id}" target="_blank" class="watch-movie-btn">Watch Movie</a></button>
-                    <button class="add-to-watchlist">Add to Watchlist</button>
-                </div>
-            </div>
-        `;
+   document.addEventListener("DOMContentLoaded", function () {
+    // Extract the movie ID from the URL parameters
+    const params = new URLSearchParams(window.location.search);
+    const movieId = params.get("id");
+
+    if (!movieId) {
+        document.getElementById("movie-details").innerHTML = "<p>No movie selected.</p>";
+        return;
     }
- 
+
+    // Fetch movie data from the JSON file
+    fetch('Data.json')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then(data => {
+            // Find the movie with the matching ID
+            const movie = data.movies.find(movie => movie.id === movieId);
+            if (movie) {
+                // Display movie details if found
+                displayMovieDetails(movie);
+            } else {
+                document.getElementById("movie-details").innerHTML = "<p>Movie not found.</p>";
+            }
+        })
+        .catch(error => {
+            console.error("Error fetching movie data:", error);
+            document.getElementById("movie-details").innerHTML = "<p>Unable to load movie details.</p>";
+        });
+});
+
+// Function to display movie details
+function displayMovieDetails(movie) {
+    const movieDetailsContainer = document.getElementById("movie-details");
+    movieDetailsContainer.innerHTML = `
+        <div class="movie-card">
+            <img class="movie-image" src="${movie.poster}" alt="${movie.title}">
+            <div class="movie-info">
+                <h2>${movie.title}</h2>
+                <p>Release Date: ${movie.releaseDate}</p>
+                <p>Cast: ${movie.cast.map(castMember => `${castMember.name} as ${castMember.role}`).join(', ')}</p>
+                <p>Crew: ${movie.crew.map(crewMember => `${crewMember.name} (${crewMember.role})`).join(', ')}</p>
+                <button><a href="trial.html?id=${movie.id}" target="_blank" class="watch-movie-btn">Watch Movie</a></button>
+                <button class="add-to-watchlist-btn">Add to Watchlist</button>
+            </div>
+        </div>
+    `;
+
+    // Add click event for the "Add to Watchlist" button
+    const watchlistButton = movieDetailsContainer.querySelector('.add-to-watchlist-btn');
+    watchlistButton.addEventListener('click', () => addToWatchlist(movie));
+}
+
+function addToWatchlist(movie) {
+    console.log("Movie to add:", movie);
+    if (!movie || !movie.id) {
+        console.error("Invalid movie object:", movie);
+        return;
+    }
+
+    // Retrieve the current watchlist from localStorage or initialize it
+    let watchlist = JSON.parse(localStorage.getItem("watchlist")) || [];
+    watchlist = watchlist.filter(item => item !== null); // Remove invalid entries
+    console.log("Current watchlist:", watchlist);
+
+    // Check if the movie is already in the watchlist
+    if (watchlist.some(item => String(item.id) === String(movie.id))) {
+        alert('Movie is already in the Watchlist!');
+        return;
+    }
+
+    // Add the movie to the watchlist
+    watchlist.push(movie);
+
+    // Save the updated watchlist to localStorage
+    try {
+        localStorage.setItem("watchlist", JSON.stringify(watchlist));
+        alert('Movie added to Watchlist!');
+    } catch (error) {
+        console.error("Error saving to localStorage:", error);
+    }
+}
+
 
 </script>
+
+</body>
 </html>
-
-
-
-
