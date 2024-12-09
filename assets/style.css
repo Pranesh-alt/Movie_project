@@ -17,6 +17,9 @@ body {
     cursor: -webkit-grab; cursor: grab;
     
 }
+#Watcher a{
+text-decoration: none;
+}
 .menu-container {
     background-color: black;
     border-radius: 8px;
