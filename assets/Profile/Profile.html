@@ -3,34 +3,192 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OTT Profile Page</title>
-    <link rel="stylesheet" href="Profile.css">
-    <script src="Profile.js" defer></script>
+    <title>Profile Page</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #1a1a1a;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .profile-container {
+            text-align: center;
+            background-color: #222;
+            padding: 30px;
+            border-radius: 12px;
+            width: 350px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .profile-picture {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-bottom: 20px;
+            border: 2px solid #ff6f61;
+        }
+        .profile-details {
+            margin-top: 20px;
+            color: #ccc;
+        }
+        .profile-details h2 {
+            font-size: 24px;
+            color: #ff6f61;
+            margin-bottom: 10px;
+        }
+        .profile-details p {
+            font-size: 16px;
+            margin-bottom: 8px;
+        }
+        .upload-btn, .remove-btn {
+            padding: 10px 20px;
+            background-color: #ff6f61;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 15px;
+            transition: 0.3s;
+        }
+        .upload-btn:hover, .remove-btn:hover {
+            background-color: #e84141;
+        }
+        input[type="file"], input[type="text"], input[type="email"] {
+            display: none;
+        }
+        .edit-btn {
+            margin-top: 10px;
+            padding: 8px 16px;
+            background-color: #ff4757;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 14px;
+            cursor: pointer;
+        }
+        .edit-btn:hover {
+            background-color: #e84141;
+        }
+        .update-profile-btn {
+            padding: 10px 20px;
+            background-color: #ff6f61;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        .update-profile-btn:hover {
+            background-color: #e84141;
+        }
+    </style>
 </head>
 <body>
     <div class="profile-container">
-        <header class="profile-header">
-            <h1>Welcome, <span id="username">Pranesh</span></h1>
-            <a href="#" class="logout-btn">Logout</a>
-        </header>
-
-        <div class="profile-content">
-            <div class="profile-info">
-                <img src="../Daredevil.jpg" alt="Profile Picture" class="profile-pic">
-                <h2>Your Subscription: <span id="subscription-status">Premium</span></h2>
-                <p>Next Billing Date: <span id="billing-date">30th Nov 2024</span></p>
-            </div>
-
-            <div class="watchlist">
-                <h2>Your Watchlist</h2>
-                <ul id="watchlist"></ul>
-            </div>
-
-            <div class="settings">
-                <h2>Account Settings</h2>
-                <a href="EDIT Profile/Edit Profile.html">Edit Profile</a> | <a href="#">Change Password</a> | <a href="#">Manage Subscription</a>
-            </div>
+        <img id="profilePic" class="profile-picture" src="default-profile.jpg" alt="Profile Picture">
+        <h2>Your Profile</h2>
+        <div class="profile-details" id="profileDetails">
+            <!-- Profile details will be shown here -->
         </div>
+        
+        <!-- Upload Profile Picture Button -->
+        <input type="file" id="fileInput" accept="image/*" onchange="uploadProfilePicture()">
+        <label for="fileInput" class="upload-btn">Upload Profile Picture</label>
+        
+        <!-- Remove Profile Picture Button -->
+        <button id="removeBtn" class="remove-btn" style="display: none;" onclick="removeProfilePicture()">Remove Profile Picture</button>
+
+        <!-- Edit Profile Section -->
+        <h3>Edit Profile</h3>
+        <input type="text" id="nameInput" placeholder="Enter your name">
+        <input type="email" id="emailInput" placeholder="Enter your email">
+        <button class="update-profile-btn" onclick="updateProfile()">Update Profile</button>
     </div>
+
+    <script>
+        // Check if there's a saved profile picture or profile details in localStorage
+        document.addEventListener("DOMContentLoaded", function() {
+            const storedImage = localStorage.getItem("profilePic");
+            const storedUsername = localStorage.getItem("username");
+            const storedEmail = localStorage.getItem("email");
+
+            // Set profile picture if available
+            if (storedImage) {
+                document.getElementById("profilePic").src = storedImage;
+                document.getElementById("removeBtn").style.display = "inline-block";
+            }
+
+            // Set profile details if available
+            if (storedUsername && storedEmail) {
+                document.getElementById("profileDetails").innerHTML = `
+                    <p><strong>Username:</strong> ${storedUsername}</p>
+                    <p><strong>Email:</strong> ${storedEmail}</p>
+                `;
+                // Set the inputs to the saved details
+                document.getElementById("nameInput").value = storedUsername;
+                document.getElementById("emailInput").value = storedEmail;
+            } else {
+                document.getElementById("profileDetails").innerHTML = `
+                    <p><strong>Username:</strong> Not set</p>
+                    <p><strong>Email:</strong> Not set</p>
+                `;
+            }
+        });
+
+        // Function to upload a profile picture
+        function uploadProfilePicture() {
+            const fileInput = document.getElementById("fileInput");
+            const file = fileInput.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(event) {
+                    const imageUrl = event.target.result;
+                    document.getElementById("profilePic").src = imageUrl;
+                    localStorage.setItem("profilePic", imageUrl); // Store image in localStorage
+                    document.getElementById("removeBtn").style.display = "inline-block"; // Show remove button
+                };
+                reader.readAsDataURL(file);
+            }
+        }
+
+        // Function to remove the profile picture
+        function removeProfilePicture() {
+            // Remove the image from localStorage
+            localStorage.removeItem("profilePic");
+            // Set default image
+            document.getElementById("profilePic").src = "default-profile.jpg";
+            document.getElementById("removeBtn").style.display = "none"; // Hide remove button
+        }
+
+        // Function to update profile details
+        function updateProfile() {
+            const name = document.getElementById("nameInput").value;
+            const email = document.getElementById("emailInput").value;
+
+            if (name && email) {
+                // Save updated details to localStorage
+                localStorage.setItem("username", name);
+                localStorage.setItem("email", email);
+
+                // Update profile details on the page
+                document.getElementById("profileDetails").innerHTML = `
+                    <p><strong>Username:</strong> ${name}</p>
+                    <p><strong>Email:</strong> ${email}</p>
+                `;
+
+                // Clear input fields
+                document.getElementById("nameInput").value = '';
+                document.getElementById("emailInput").value = '';
+            } else {
+                alert("Please enter both name and email.");
+            }
+        }
+    </script>
 </body>
 </html>

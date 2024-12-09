@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Watchlist</title>
+    <!-- Ensure this path is correct or add a favicon.ico if needed -->
+    <link rel="stylesheet" href="WATHER.CSS"> <!-- Ensure this path is correct -->
+</head>
+<body>
+
+    <header>
+        <h1>Your Watchlist</h1>
+    </header>
+    <main id="watchlist-container">
+        <!-- Watchlist items will be dynamically loaded here -->
+    </main>
+
+<script>
+   
+   document.addEventListener("DOMContentLoaded", function () {
+    const watchlistContainer = document.getElementById("watchlist-container");
+
+    // Function to load the watchlist from localStorage
+    function loadWatchlist() {
+        const watchlist = JSON.parse(localStorage.getItem("watchlist")) || [];
+
+        if (watchlist.length === 0) {
+            watchlistContainer.innerHTML = "<p>Your watchlist is empty.</p>";
+            return;
+        }
+
+        // Clear any existing content
+        watchlistContainer.innerHTML = "";
+
+        // Generate the watchlist items
+        watchlist.forEach(movie => {
+            const movieCard = document.createElement("div");
+            movieCard.classList.add("movie-card");
+
+            const movieImage = document.createElement("img");
+            movieImage.classList.add("movie-image");
+            movieImage.src = movie.poster;
+            movieImage.alt = movie.title;
+
+            const movieInfo = document.createElement("div");
+            movieInfo.classList.add("movie-info");
+
+            const movieTitle = document.createElement("h2");
+            movieTitle.textContent = movie.title;
+
+            const movieReleaseDate = document.createElement("p");
+            movieReleaseDate.textContent = `Release Date: ${movie.releaseDate}`;
+
+            const removeButton = document.createElement("button");
+            removeButton.textContent = "Remove from Watchlist";
+            removeButton.classList.add("remove-watchlist-btn");
+            removeButton.onclick = () => removeFromWatchlist(movie.id);
+
+            // Append details to the movie card
+            movieInfo.appendChild(movieTitle);
+            movieInfo.appendChild(movieReleaseDate);
+            movieInfo.appendChild(removeButton);
+
+            movieCard.appendChild(movieImage);
+            movieCard.appendChild(movieInfo);
+
+            watchlistContainer.appendChild(movieCard);
+        });
+    }
+
+    // Function to remove a movie from the watchlist
+    function removeFromWatchlist(movieId) {
+        let watchlist = JSON.parse(localStorage.getItem("watchlist")) || [];
+        watchlist = watchlist.filter(movie => movie.id !== movieId);
+        localStorage.setItem("watchlist", JSON.stringify(watchlist));
+        alert("Movie removed from Watchlist!");
+        loadWatchlist();
+    }
+
+    // Initial load
+    loadWatchlist();
+});
+
+</script>
+
+</body>
+</html>

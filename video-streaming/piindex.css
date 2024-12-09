@@ -1,0 +1,96 @@
+   /* Reset some default styles */
+   * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #222, #444);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+  }
+  
+  .container {
+    width: 100%;
+    max-width: 1200px;
+    text-align: center;
+  }
+  
+  header h1 {
+    font-size: 2.5rem;
+    color: #ff6f61;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+  }
+  
+  footer p {
+    font-size: 1rem;
+    color: #ccc;
+    margin-top: 20px;
+  }
+  
+  .video-container {
+    width: 100%;
+    max-width: 1000px;
+    margin: 20px auto;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  
+  .video-player {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    outline: none;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .video-player:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+  }
+  
+  footer {
+    font-size: 1.2rem;
+    color: #ccc;
+    padding-top: 20px;
+    text-align: center;
+  }
+  
+  /* Custom Controls */
+  .video-player::-webkit-media-controls-panel {
+    background-color: rgba(0, 0, 0, 0.8) !important;
+    border-radius: 10px;
+  }
+  
+  .video-player::-webkit-media-controls-play-button,
+  .video-player::-webkit-media-controls-volume-slider,
+  .video-player::-webkit-media-controls-fullscreen-button {
+    background-color: #ff6f61 !important;
+    border-radius: 50%;
+  }
+  
+  .video-player::-webkit-media-controls-play-button:hover,
+  .video-player::-webkit-media-controls-volume-slider:hover,
+  .video-player::-webkit-media-controls-fullscreen-button:hover {
+    background-color: #e04f40 !important;
+    transition: background-color 0.3s ease;
+  }
+  
+  @media screen and (max-width: 768px) {
+    header h1 {
+      font-size: 2rem;
+    }
+  
+    .video-container {
+      width: 100%;
+    }
+  }
