@@ -54,7 +54,7 @@
             "title": "Arrow",
             "releaseDate": "10 Oct 2012",
             "duration": "4h 02m",
-            "poster": "Arrow.jpg",
+            "poster": "https://firebasestorage.googleapis.com/v0/b/comics-tv-8e695.appspot.com/o/Images%2FHome%20Page%2FArrow.jpg?alt=media&token=46bab397-2e15-4403-b3e6-9edd43fe2546",
             "cast": [
                 {"name": "Stephen Amell", "role": "Oliver Queen / Arrow / Green Arrow"},
                 {"name": "Katie Cassidy ", "role": "Laurel Lance / Black Canary "},
@@ -71,7 +71,7 @@
             "title": "Loki",
             "releaseDate": "09 June, 2021",
             "duration": "4h 02m",
-            "poster": "Loki.jpg",
+            "poster": "https://firebasestorage.googleapis.com/v0/b/comics-tv-8e695.appspot.com/o/Images%2FHome%20Page%2FLoki.jpg?alt=media&token=2d100c41-7e36-4fad-8607-7db1edd41967",
             "cast": [
                 {"name": "Tom Hiddleston", "role": "Loki"},
                 {"name": "Sophia Di Martino", "role": "Sylvie"},
@@ -88,7 +88,7 @@
             "title": "Zack Snyder's Justice League",
             "releaseDate": "18 Mar, 2021",
             "duration": "4h 02m",
-            "poster": "ZSJL.jpg",
+            "poster": "https://firebasestorage.googleapis.com/v0/b/comics-tv-8e695.appspot.com/o/Images%2FHome%20Page%2FZSJL.jpg?alt=media&token=5f7008e8-ea28-40e9-af58-fe5ebc55ecea",
             "cast": [
                 {"name": "Ben Affleck", "role": "Bruce Wayne / Batman"},
                 {"name": "Henry Cavill", "role": "Clark Kent / Superman"},
@@ -160,7 +160,7 @@
             "title": "Man of steel",
             "releaseDate": "18 July, 2008",
             "duration": "2h 32m",
-            "poster": "Man of steel.jpg",
+            "poster": "https://firebasestorage.googleapis.com/v0/b/comics-tv-8e695.appspot.com/o/Images%2FHome%20Page%2FMOS.jpg?alt=media&token=dfab6f0c-7a8e-43f5-b018-8ddcd1cc8fce",
             "cast": [
                 {"name": "Rajinikanth", "role": "Lead"},
                 {"name": "Nayanthara", "role": "Supporting"},
@@ -232,7 +232,7 @@
             "title": "The Penguin",
             "releaseDate": "18 July, 2008",
             "duration": "2h 32m",
-            "poster": "Penguin.jpg",
+            "poster": "https://firebasestorage.googleapis.com/v0/b/comics-tv-8e695.appspot.com/o/Images%2FHome%20Page%2FPenguin.jpeg?alt=media&token=adeb8544-9451-4496-97e7-cbb80fd4acb3",
             "cast": [
                 {"name": "Rajinikanth", "role": "Lead"},
                 {"name": "Nayanthara", "role": "Supporting"},
@@ -286,7 +286,7 @@
             "title": "Captain America Brave New World",
             "releaseDate": "18 July, 2008",
             "duration": "2h 32m",
-            "poster": "./assets/CABNW.jpg",
+            "poster": "https://firebasestorage.googleapis.com/v0/b/comics-tv-8e695.appspot.com/o/Images%2FHome%20Page%2FCABNW.jpg?alt=media&token=7a3adc88-cbf8-4efb-aaaa-811860893292",
             "cast": [
                 {"name": "Rajinikanth", "role": "Lead"},
                 {"name": "Nayanthara", "role": "Supporting"},
@@ -340,7 +340,7 @@
             "title": "The Batman 2",
             "releaseDate": "18 July, 2008",
             "duration": "2h 32m",
-            "poster": "./assets/Batman2.jpg",
+            "poster": "https://firebasestorage.googleapis.com/v0/b/comics-tv-8e695.appspot.com/o/Images%2FHome%20Page%2FBatman2.jpg?alt=media&token=86cb475d-2a47-4768-9f21-2c0a381dd82e",
             "cast": [
                 {"name": "Rajinikanth", "role": "Lead"},
                 {"name": "Nayanthara", "role": "Supporting"},
@@ -701,7 +701,7 @@
             "title": "Big hero 6",
             "releaseDate": "7 November 2014",
             "duration": "1h 48m",
-            "poster": "./assets/Bighero 6.png",
+            "poster": "https://firebasestorage.googleapis.com/v0/b/comics-tv-8e695.appspot.com/o/Images%2FHome%20Page%2FBighero%206.png?alt=media&token=0968320a-f5a5-47d2-a0d8-f7493ec988d4",
             "cast": [
                 {"name": "Scott Adsit", "role": "Baymax"},
                 {"name": "Ryan Pottera", "role": "Hiro Hamada"},

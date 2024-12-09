@@ -71,18 +71,93 @@
 
     // Function to remove a movie from the watchlist
     function removeFromWatchlist(movieId) {
-        let watchlist = JSON.parse(localStorage.getItem("watchlist")) || [];
-        watchlist = watchlist.filter(movie => movie.id !== movieId);
-        localStorage.setItem("watchlist", JSON.stringify(watchlist));
-        alert("Movie removed from Watchlist!");
-        loadWatchlist();
+    console.log("Removing movie with ID:", movieId);
+
+    if (!movieId) {
+        console.error("Invalid movie ID:", movieId);
+        Swal.fire({
+            icon: 'error',
+            title: 'Invalid Movie ID',
+            text: 'The movie ID provided is invalid.',
+            confirmButtonText: 'Got it!',
+        });
+        return;
     }
+
+    const WATCHLIST_KEY = "watchlist";
+    let watchlist = [];
+
+    try {
+        // Retrieve the current watchlist from localStorage
+        watchlist = JSON.parse(localStorage.getItem(WATCHLIST_KEY)) || [];
+    } catch (error) {
+        console.error("Error accessing localStorage:", error);
+        Swal.fire({
+            icon: 'error',
+            title: 'Storage Error',
+            text: 'Could not access localStorage. Please check your browser settings.',
+            confirmButtonText: 'OK',
+        });
+        return;
+    }
+
+    // Filter out any invalid entries from the watchlist (e.g., null or undefined)
+    watchlist = watchlist.filter(item => item !== null);
+
+    // Find the movie by ID
+    const movieIndex = watchlist.findIndex(item => String(item.id) === String(movieId));
+
+    if (movieIndex === -1) {
+        // If the movie is not found in the watchlist
+        Swal.fire({
+            icon: 'warning',
+            title: 'Not Found!',
+            text: 'The movie is not found in your watchlist.',
+            confirmButtonText: 'OK',
+        });
+        return;
+    }
+
+    // Remove the movie from the watchlist
+    const removedMovie = watchlist.splice(movieIndex, 1)[0];
+
+    try {
+        // Save the updated watchlist back to localStorage
+        localStorage.setItem(WATCHLIST_KEY, JSON.stringify(watchlist));
+
+        // Success popup with movie title
+        Swal.fire({
+            icon: 'success',
+            title: 'Removed from Watchlist!',
+            text: `The movie "${removedMovie.title}" has been successfully removed from your watchlist.`,
+            confirmButtonText: 'Awesome!',
+        });
+
+        // Refresh the displayed watchlist if the function exists
+        if (typeof loadWatchlist === "function") {
+            loadWatchlist();
+        } else {
+            console.warn("loadWatchlist function is not defined.");
+        }
+    } catch (error) {
+        console.error("Error saving to localStorage:", error);
+        Swal.fire({
+            icon: 'error',
+            title: 'Error!',
+            text: 'An error occurred while removing the movie. Please try again.',
+            confirmButtonText: 'OK',
+        });
+    }
+}
+
 
     // Initial load
     loadWatchlist();
 });
 
 </script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 </body>
 </html>

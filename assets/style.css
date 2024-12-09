@@ -25,25 +25,6 @@ text-decoration: none;
     border-radius: 8px;
     width: 250px;
 }
-.profile-link {
-    display: inline-block;
-    border-radius: 50%;
-}
-
-.profile-icon {
-    width: 40px;
-    height: 40px;
-    background-color: #444;
-    border-radius: 50%;
-    background-image: url('./Batman2.jpg'); /* Replace with actual image */
-    background-size: cover;
-    background-position: center;
-    transition: transform 0.3s ease;
-}
-
-.profile-link:hover .profile-icon {
-    transform: scale(1.1);
-}
 
 
 .side-bar{

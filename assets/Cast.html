@@ -300,24 +300,30 @@ function addToWatchlist(movie) {
         return;
     }
 
-    // Retrieve the current watchlist from localStorage or initialize it
-    let watchlist = JSON.parse(localStorage.getItem("watchlist")) || [];
-    watchlist = watchlist.filter(item => item !== null); // Remove invalid entries
-    console.log("Current watchlist:", watchlist);
+    const WATCHLIST_KEY = "watchlist";
+    let watchlist = JSON.parse(localStorage.getItem(WATCHLIST_KEY)) || [];
+    watchlist = watchlist.filter(item => item !== null);
 
-    // Check if the movie is already in the watchlist
     if (watchlist.some(item => String(item.id) === String(movie.id))) {
-        alert('Movie is already in the Watchlist!');
+        Swal.fire({
+            icon: 'info',
+            title: 'Already in Watchlist!',
+            text: `The movie "${movie.title}" is already in your watchlist.`,
+            confirmButtonText: 'Got it!',
+        });
         return;
     }
 
-    // Add the movie to the watchlist
     watchlist.push(movie);
 
-    // Save the updated watchlist to localStorage
     try {
-        localStorage.setItem("watchlist", JSON.stringify(watchlist));
-        alert('Movie added to Watchlist!');
+        localStorage.setItem(WATCHLIST_KEY, JSON.stringify(watchlist));
+        Swal.fire({
+            icon: 'success',
+            title: 'Added to Watchlist!',
+            text: `The movie "${movie.title}" was successfully added to your watchlist.`,
+            confirmButtonText: 'Awesome!',
+        });
     } catch (error) {
         console.error("Error saving to localStorage:", error);
     }
@@ -325,6 +331,8 @@ function addToWatchlist(movie) {
 
 
 </script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 </body>
 </html>
