@@ -43,6 +43,8 @@ function renderMovies(movies) {
 
 fetchMovies();
 
+document.addEventListener('DOMContentLoaded', fetchMovies); 
+
 
 document.getElementById('profile-logo').onclick = function() {
     const dropdown = document.getElementById('dropdown-menu');

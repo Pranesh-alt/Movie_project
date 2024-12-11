@@ -197,6 +197,55 @@ header h1 {
         font-size: 1rem;
     }
 }
+input#searchBar {
+    width: 50%;
+    padding: 15px 20px;
+    margin-top: 20px;
+    font-size: 1.2rem;
+    border: 2px solid transparent;
+    border-radius: 25px;
+    background: linear-gradient(145deg, #1c1c1c, #292929);
+    color: var(--text-color);
+    box-shadow: 0 10px 20px var(--shadow-color), inset 0 0 10px rgba(255, 255, 255, 0.1);
+    transition: all 0.5s ease;
+    outline: none;
+}
+
+input#searchBar::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1rem;
+    font-style: italic;
+}
+
+input#searchBar:hover {
+    background: linear-gradient(145deg, #292929, #1c1c1c);
+    box-shadow: 0 10px 30px var(--accent-color), inset 0 0 20px rgba(255, 255, 255, 0.2);
+}
+
+input#searchBar:focus {
+    border: 2px solid var(--accent-color);
+    background: linear-gradient(to right, #1a1a1a, var(--secondary-color));
+    box-shadow: 0 0 40px var(--neon-glow), 0 0 10px rgba(0, 255, 255, 0.5), inset 0 0 15px rgba(255, 255, 255, 0.2);
+    transform: scale(1.05);
+}
+
+input#searchBar:focus::placeholder {
+    color: transparent;
+}
+
+@media (max-width: 768px) {
+    input#searchBar {
+        width: 80%;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    input#searchBar {
+        width: 90%;
+        font-size: 0.9rem;
+    }
+}
 
 
     </style>
@@ -206,30 +255,38 @@ header h1 {
         <div class="DC_logo">
             <img src="DC/DC.png" alt="DC Logo">
         </div>
+        <div>
+            <input type="text" id="searchBar" placeholder="Search Movies..." oninput="filterMovies()">
+
+        </div>
     </header>
    
     <div class="gallery-container" id="movieGallery"></div>
     
     <script>
+let movies = []; 
+
+// Function to fetch movies from the JSON file
 async function fetchMovies() {
     try {
-        const response = await fetch('DC.JSON'); // Replace 'DC.json' with your actual file or API endpoint
+        const response = await fetch('DC.JSON'); 
         if (!response.ok) {
             throw new Error('Network response was not ok');
         }
         const data = await response.json();
-        renderMovies(data.DCMovies);  // Assuming your JSON has a "DCMovies" array
+        movies = data.DCMovies; // Store the fetched movies globally
+        renderMovies(movies);  // Render all movies initially
     } catch (error) {
         console.error('There was a problem with the fetch operation:', error);
     }
 }
 
 // Function to render movies on the page
-function renderMovies(movies) {
+function renderMovies(moviesToRender) {
     const movieGallery = document.getElementById('movieGallery'); 
     movieGallery.innerHTML = ''; 
 
-    movies.forEach(movie => {
+    moviesToRender.forEach(movie => {
         const movieCard = document.createElement('div');
         movieCard.className = 'movie-card';
 
@@ -243,11 +300,11 @@ function renderMovies(movies) {
         movieInfo.className = 'movie-info';
 
         const movieTitle = document.createElement('h2');
-        movieTitle.textContent = movie.title;  // Movie title
+        movieTitle.textContent = movie.title;  
         movieInfo.appendChild(movieTitle);
 
         const movieDescription = document.createElement('p');
-        movieDescription.textContent = movie.description;  // Movie description
+        movieDescription.textContent = movie.description;  
         movieInfo.appendChild(movieDescription);
 
         movieCard.appendChild(movieInfo);
@@ -255,11 +312,18 @@ function renderMovies(movies) {
     });
 }
 
+// Function to filter movies based on search input
+function filterMovies() {
+    const query = document.getElementById('searchBar').value.toLowerCase();
+    const filteredMovies = movies.filter(movie => 
+        movie.title.toLowerCase().includes(query) || 
+        movie.description.toLowerCase().includes(query)
+    );
+    renderMovies(filteredMovies); // Render filtered movies
+}
+
 document.addEventListener('DOMContentLoaded', fetchMovies); 
 
-function redirectToHome() {
-            window.location.href = '/'; // Change '/' to your home page URL
-        }
     </script>
 </body>
 </html>

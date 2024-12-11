@@ -124,7 +124,7 @@
             "title": "The Dark Knight",
             "releaseDate": "18 July, 2008",
             "duration": "2h 32m",
-            "poster": "Dark knight.jpg",
+            "poster": "https://firebasestorage.googleapis.com/v0/b/comics-tv-8e695.appspot.com/o/Images%2FHome%20Page%2FDark%20knight.jpg?alt=media&token=51c54a88-b34d-4aaf-92b7-6b4ff109464f",
             "cast": [
                 {"name": "Rajinikanth", "role": "Lead"},
                 {"name": "Nayanthara", "role": "Supporting"},
@@ -268,7 +268,7 @@
             "title": "Kraven The Hunter",
             "releaseDate": "18 July, 2008",
             "duration": "2h 32m",
-            "poster": "./assets/Kraven The Hunter.jpg",
+            "poster": "https://firebasestorage.googleapis.com/v0/b/comics-tv-8e695.appspot.com/o/Images%2FHome%20Page%2FKraven%20The%20Hunter.jpg?alt=media&token=87a05617-1735-4831-b10f-35f58150de01",
             "cast": [
                 {"name": "Rajinikanth", "role": "Lead"},
                 {"name": "Nayanthara", "role": "Supporting"},
@@ -304,7 +304,7 @@
             "title": "Thunderbolts",
             "releaseDate": "18 July, 2008",
             "duration": "2h 32m",
-            "poster": "./assets/Thunderbolts.jpg",
+            "poster": "https://firebasestorage.googleapis.com/v0/b/comics-tv-8e695.appspot.com/o/Images%2FHome%20Page%2FThunderbolts.jpg?alt=media&token=a1c4d14b-8d6b-4222-9ce5-4c7c4384f65e",
             "cast": [
                 {"name": "Rajinikanth", "role": "Lead"},
                 {"name": "Nayanthara", "role": "Supporting"},
@@ -322,7 +322,7 @@
             "title": "Daredevil Born Again",
             "releaseDate": "18 July, 2008",
             "duration": "2h 32m",
-            "poster": "./assets/Daredevil4.jpg",
+            "poster": "https://firebasestorage.googleapis.com/v0/b/comics-tv-8e695.appspot.com/o/Images%2FHome%20Page%2FDaredevil4.jpg?alt=media&token=29106af8-3266-4f7c-93aa-836d738142f1",
             "cast": [
                 {"name": "Rajinikanth", "role": "Lead"},
                 {"name": "Nayanthara", "role": "Supporting"},
@@ -358,7 +358,7 @@
             "title": "Watchmen",
             "releaseDate": "18 July, 2008",
             "duration": "2h 32m",
-            "poster": "./assets/Watchmen.jpeg",
+            "poster": "https://firebasestorage.googleapis.com/v0/b/comics-tv-8e695.appspot.com/o/Images%2FHome%20Page%2FWatchmen.jpeg?alt=media&token=584d8b43-50ac-4abb-a987-26c4e29d6530",
             "cast": [
                 {"name": "Rajinikanth", "role": "Lead"},
                 {"name": "Nayanthara", "role": "Supporting"},
@@ -376,7 +376,7 @@
             "title": "History of Violence",
             "releaseDate": "18 July, 2008",
             "duration": "2h 32m",
-            "poster": "./assets/History of violence.jpg",
+            "poster": "https://firebasestorage.googleapis.com/v0/b/comics-tv-8e695.appspot.com/o/Images%2FHome%20Page%2FHistory%20of%20violence.jpg?alt=media&token=27c8963c-9cea-47f5-a0f3-de21bba2bcde",
             "cast": [
                 {"name": "Rajinikanth", "role": "Lead"},
                 {"name": "Nayanthara", "role": "Supporting"},
@@ -394,7 +394,7 @@
             "title": "V for Vendetta",
             "releaseDate": "18 July, 2008",
             "duration": "2h 32m",
-            "poster": "./assets/V for vendetta.jpg",
+            "poster": "https://firebasestorage.googleapis.com/v0/b/comics-tv-8e695.appspot.com/o/Images%2FHome%20Page%2FV%20for%20vendetta.jpg?alt=media&token=993480f4-c7d8-455a-a03a-1275641099c0",
             "cast": [
                 {"name": "Rajinikanth", "role": "Lead"},
                 {"name": "Nayanthara", "role": "Supporting"},
@@ -412,7 +412,7 @@
             "title": "Constantine",
             "releaseDate": "18 July, 2008",
             "duration": "2h 32m",
-            "poster": "./assets/cONSTANTINE.jpg",
+            "poster": "https://firebasestorage.googleapis.com/v0/b/comics-tv-8e695.appspot.com/o/Images%2FHome%20Page%2FcONSTANTINE.jpg?alt=media&token=7f380a36-86e2-49f3-881e-0544e078860d",
             "cast": [
                 {"name": "Rajinikanth", "role": "Lead"},
                 {"name": "Nayanthara", "role": "Supporting"},
@@ -430,7 +430,7 @@
             "title": "Jonah Hex",
             "releaseDate": "18 July, 2008",
             "duration": "2h 32m",
-            "poster": "./assets/Jonah hex.jpg",
+            "poster": "https://firebasestorage.googleapis.com/v0/b/comics-tv-8e695.appspot.com/o/Images%2FHome%20Page%2FJonah%20hex.jpg?alt=media&token=cb77a34a-98df-4861-a4db-3e0c7de83a6a",
             "cast": [
                 {"name": "Rajinikanth", "role": "Lead"},
                 {"name": "Nayanthara", "role": "Supporting"},
@@ -448,7 +448,7 @@
             "title": "Men In Black",
             "releaseDate": "18 July, 2008",
             "duration": "2h 32m",
-            "poster": "./assets/MIB.jpg",
+            "poster": "https://firebasestorage.googleapis.com/v0/b/comics-tv-8e695.appspot.com/o/Images%2FHome%20Page%2FMIB.jpg?alt=media&token=13390bfc-899f-408a-b97c-cdc1d6f5ff49",
             "cast": [
                 {"name": "Rajinikanth", "role": "Lead"},
                 {"name": "Nayanthara", "role": "Supporting"},
@@ -466,7 +466,7 @@
             "title": "Kingsman",
             "releaseDate": "18 July, 2008",
             "duration": "2h 32m",
-            "poster": "./assets/Kingsmen.jpg",
+            "poster": "https://firebasestorage.googleapis.com/v0/b/comics-tv-8e695.appspot.com/o/Images%2FHome%20Page%2FKingsmen.jpg?alt=media&token=b7584952-9bbc-4b73-b65c-d72a1bb6d5ef",
             "cast": [
                 {"name": "Rajinikanth", "role": "Lead"},
                 {"name": "Nayanthara", "role": "Supporting"},
@@ -484,7 +484,7 @@
             "title": "Kick Ass",
             "releaseDate": "16 April, 2010",
             "duration": "1h 58m",
-            "poster": "./assets/Kick-ass.jpg",
+            "poster": "https://firebasestorage.googleapis.com/v0/b/comics-tv-8e695.appspot.com/o/Images%2FHome%20Page%2Fkick-ass.jpg?alt=media&token=3b900c85-1307-439f-9ab4-b9c7ba1fbb85",
             "cast": [
                 {"name": "Aaron Johnson", "role": "Dave Lizewski / Kick-Ass"},
                 {"name": "Chloë Grace Moretz", "role": "Mindy Macready / Hit-Girl"},
@@ -502,7 +502,7 @@
             "title": "Man Thing",
             "releaseDate": "30 April, 2005",
             "duration": "1h 37m",
-            "poster": "./assets/Man Thing.jpg",
+            "poster": "https://firebasestorage.googleapis.com/v0/b/comics-tv-8e695.appspot.com/o/Images%2FHome%20Page%2FMan%20Thing.jpg?alt=media&token=ed31a14c-a266-4f2c-909a-690305a965cb",
             "cast": [
                 {"name": "Conan Stevens", "role": "Ted Sallis / Man-Thing"},
                 {"name": "Matthew Le Nevez", "role": "Sheriff Kyle Williams"},
@@ -520,7 +520,7 @@
             "title": "Men In Black 3",
             "releaseDate": "25 May, 2012",
             "duration": "1h 46m",
-            "poster": "./assets/MIB3.webp",
+            "poster": "https://firebasestorage.googleapis.com/v0/b/comics-tv-8e695.appspot.com/o/Images%2FHome%20Page%2FMIB3.webp?alt=media&token=d1ef147f-21dc-4a14-9bd9-a37a6511eb7b",
             "cast": [
                 {"name": "Will Smith", "role": "James Darrell Edwards III / Agent J"},
                 {"name": "Josh Brolin", "role": "Kevin Brown / Agent K"},
@@ -538,7 +538,7 @@
             "title": "Flashpoint Paradox",
             "releaseDate": "30 July, 2013",
             "duration": "1h 21m",
-            "poster": "Flashpointparadox.jpg",
+            "poster": "https://firebasestorage.googleapis.com/v0/b/comics-tv-8e695.appspot.com/o/Images%2FHome%20Page%2FFlashpointparadox.jpg?alt=media&token=2db4884d-dd1e-4243-87fd-ef48908d1ee1",
             "cast": [
                 {"name": "Justin Chambers", "role": "Barry Allen / The Flash"},
                 {"name": "C. Thomas Howell", "role": "Eobard Thawne / Professor Zoom"},
@@ -556,7 +556,7 @@
             "title": "Justice League war",
             "releaseDate": "February 4, 2014",
             "duration": "1h 19m",
-            "poster": "./assets/JL War.jpg",
+            "poster": "https://firebasestorage.googleapis.com/v0/b/comics-tv-8e695.appspot.com/o/Images%2FHome%20Page%2FJL%20War.jpg?alt=media&token=5640f61d-7645-46ae-925d-07a393f9e191",
             "cast": [
                 {"name": "Alan Tudyk", "role": "Kal-El / Clark Kent / Superman"},
                 {"name": "Jason O'Mara", "role": "Bruce Wayne / Batman"},
@@ -575,7 +575,7 @@
             "title": "Teen Titans Judas contract",
             "releaseDate": "April 4, 2017",
             "duration": "1h 24m",
-            "poster": "./assets/teen-titans-the-judas-contract.jpg",
+            "poster": "https://firebasestorage.googleapis.com/v0/b/comics-tv-8e695.appspot.com/o/Images%2FHome%20Page%2Fteen-titans-the-judas-contract.jpg?alt=media&token=76de2cd1-ff09-4e3c-9480-fce9d68fb38f",
             "cast": [
                 {"name": "", "role": "Dick Grayson / Robin / Nightwing"},
                 {"name": "Stuart Allan", "role": "Damian Wayne / Robin"},
@@ -593,7 +593,7 @@
             "title": "Suicide Squad Hell to Pay",
             "releaseDate": "March 27, 2018",
             "duration": "1h 26m",
-            "poster": "./assets/Suicide squad.jpg",
+            "poster": "https://firebasestorage.googleapis.com/v0/b/comics-tv-8e695.appspot.com/o/Images%2FHome%20Page%2FSuicide%20squad.jpg?alt=media&token=456b7476-a0fc-4340-b23b-fc64e5f3e5ef",
             "cast": [
                 {"name": "Christian Slater", "role": "Floyd Lawton / Deadshot"},
                 {"name": "Vanessa Williams", "role": "Amanda Waller"},
@@ -611,7 +611,7 @@
             "title": "Superman Unbound",
             "releaseDate": "23 April 2013",
             "duration": "1h 15m",
-            "poster": "./assets/Supermanunbound.jpg",
+            "poster": "https://firebasestorage.googleapis.com/v0/b/comics-tv-8e695.appspot.com/o/Images%2FHome%20Page%2FSupermanunbound.jpg?alt=media&token=3e4eb945-e99b-49c8-9467-4a2e4f9d0c6a",
             "cast": [
                 {"name": "Matt Bomer", "role": "Kal-El / Clark Kent / Superman"},
                 {"name": "John Noble", "role": "Brainiac"},

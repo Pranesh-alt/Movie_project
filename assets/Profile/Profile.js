@@ -1,40 +1,37 @@
-document.addEventListener("DOMContentLoaded", () => {
-    const watchlistContainer = document.getElementById('watchlist');
+// Import Firebase SDK
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-app.js";
+import { getStorage, ref, uploadBytes, getDownloadURL } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-storage.js";
 
-    // Initialize watchlist from localStorage
-    let watchlist = JSON.parse(localStorage.getItem('watchlist')) || [];
+// Firebase Configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyCN8UQscHAfxsKfn6tJ5yHtAj00EG3V8zI",
+  authDomain: "comics-tv-8e695.firebaseapp.com",
+  projectId: "comics-tv-8e695",
+  storageBucket: "comics-tv-8e695.appspot.com",
+  messagingSenderId: "457088220613",
+  appId: "1:457088220613:web:529c86c12d13435f6adfac",
+  measurementId: "G-CBWWFMVLKQ"
+};
 
-    // Function to render the watchlist
-    function renderWatchlist() {
-        watchlistContainer.innerHTML = ''; // Clear previous items
-        if (watchlist.length === 0) {
-            watchlistContainer.innerHTML = '<p>Your watchlist is empty.</p>';
-            return;
-        }
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const storage = getStorage(app);
 
-        watchlist.forEach(item => {
-            const listItem = document.createElement('li');
-            listItem.innerHTML = `
-                <span>${item.title}</span>
-                <button class="remove-btn" data-id="${item.id}">Remove</button>
-            `;
-            watchlistContainer.appendChild(listItem);
-        });
+// DOM Elements
+const fileInput = document.getElementById("fileInput");
+const profileImage = document.getElementById("profileImage");
 
-        // Add event listeners to remove buttons
-        document.querySelectorAll('.remove-btn').forEach(button => {
-            button.addEventListener('click', removeFromWatchlist);
-        });
-    }
+fileInput.addEventListener("change", async (e) => {
+  const file = e.target.files[0];
+  const storageRef = ref(storage, `profile_pictures/${file.name}`);
 
-    // Function to remove an item from the watchlist
-    function removeFromWatchlist(event) {
-        const contentId = event.target.getAttribute('data-id');
-        watchlist = watchlist.filter(item => item.id !== contentId);
-        localStorage.setItem('watchlist', JSON.stringify(watchlist));
-        renderWatchlist();
-    }
-
-    // Initial render
-    renderWatchlist();
+  try {
+    await uploadBytes(storageRef, file);
+    const url = await getDownloadURL(storageRef);
+    profileImage.src = url;
+    alert("File uploaded successfully!");
+  } catch (error) {
+    console.error("Error uploading file:", error);
+    alert("Error uploading file: " + error.message);
+  }
 });

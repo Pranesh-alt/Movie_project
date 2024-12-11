@@ -1,143 +1,101 @@
-/* Reset and body styling */
-* {
+/* General Styles */
+body {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Poppins', sans-serif;
-    background-color: #0f0f0f;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #1d1e26, #3b3b5a);
     color: #fff;
-    min-height: 100vh;
-}
-
-/* Container styling */
-.profile-container {
-    max-width: 1000px;
-    margin: 40px auto;
-    padding: 20px;
-    background: linear-gradient(135deg, #1a1a1a, #2c2c2c);
-    border-radius: 12px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
-    overflow: hidden;
-}
-
-/* Header with logout button */
-.profile-header {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    border-bottom: 1px solid #333;
-    padding-bottom: 15px;
-}
-
-.logout-btn {
-    background: #e50914;
-    color: #fff;
-    padding: 10px 18px;
-    text-transform: uppercase;
-    font-weight: bold;
-    border: none;
-    border-radius: 25px;
-    cursor: pointer;
-    transition: all 0.3s ease-in-out;
-}
-
-.logout-btn:hover {
-    background: #b00710;
-}
-
-/* Profile Info Section */
-.profile-info {
+    height: 100vh;
+  }
+  
+  /* Profile Container */
+  .profile-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  
+  /* Profile Card */
+  .profile-card {
+    background: #2a2b38;
+    border-radius: 12px;
+    padding: 2rem;
     text-align: center;
-    margin-top: 20px;
-}
-
-.profile-pic {
-    width: 120px;
-    height: 120px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3);
+    max-width: 400px;
+    width: 100%;
+    transition: transform 0.3s ease-in-out;
+  }
+  .profile-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  /* Profile Image */
+  .profile-image-container {
+    width: 150px;
+    height: 150px;
+    margin: 0 auto;
     border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid #575a89;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  }
+  .profile-image {
+    width: 100%;
+    height: 100%;
     object-fit: cover;
-    border: 4px solid #e50914;
-    transition: transform 0.4s;
-}
-
-.profile-pic:hover {
-    transform: scale(1.1);
-}
-
-.user-name {
-    font-size: 1.8em;
-    margin-top: 15px;
-    font-weight: bold;
-    color: #e0e0e0;
-}
-
-/* Subscription and billing info */
-.profile-info h2 {
-    font-size: 1.2em;
-    color: #b3b3b3;
-    margin-top: 10px;
-}
-
-/* Watchlist styling */
-.watchlist {
-    margin: 40px 0;
-}
-
-.watchlist h2 {
-    font-size: 1.5em;
-    border-left: 5px solid #e50914;
-    padding-left: 10px;
-    margin-bottom: 15px;
-}
-
-.watchlist ul {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 15px;
-}
-
-.watchlist li {
-    background: #222;
-    padding: 15px;
-    border-radius: 10px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  /* Profile Name */
+  .profile-name {
+    margin: 1rem 0;
+    font-size: 1.5rem;
+    color: #fff;
+  }
+  
+  /* Upload Form */
+  .upload-form {
+    margin-top: 1rem;
+  }
+  
+  /* Upload Label */
+  .upload-label {
+    display: inline-block;
+    background: #575a89;
+    color: #fff;
+    padding: 0.7rem 1.5rem;
+    border-radius: 30px;
     cursor: pointer;
-}
-
-.watchlist li:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
-}
-
-/* Account settings styling */
-.settings {
-    margin-top: 30px;
-    text-align: center;
-}
-
-.settings a {
-    color: #e50914;
-    text-decoration: none;
-    font-weight: 600;
-    margin: 0 15px;
-    transition: color 0.3s ease;
-}
-
-.settings a:hover {
-    color: #f75b5b;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .watchlist ul {
-        grid-template-columns: 1fr;
-    }
-
-    .logout-btn {
-        padding: 8px 12px;
-        font-size: 0.9em;
-    }
-}
+    font-size: 0.9rem;
+    transition: background 0.3s ease;
+  }
+  .upload-label:hover {
+    background: #7175b3;
+  }
+  
+  /* Hidden File Input */
+  .upload-input {
+    display: none;
+  }
+  
+  /* Upload Button */
+  .upload-button {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.7rem 1.5rem;
+    background: #4caf50;
+    border: none;
+    color: #fff;
+    font-size: 0.9rem;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  .upload-button:hover {
+    background: #66bb6a;
+  }
+  
