@@ -1,40 +1,45 @@
-document.addEventListener("DOMContentLoaded", () => {
-    const watchlistContainer = document.getElementById('watchlist');
+const avatar = document.getElementById("avatar");
+const avatarInput = document.getElementById("avatarInput");
+const nameInput = document.getElementById("nameInput");
+const editModeBtn = document.getElementById("editModeBtn");
 
-    // Initialize watchlist from localStorage
-    let watchlist = JSON.parse(localStorage.getItem('watchlist')) || [];
+const popupModal = document.getElementById("popupModal");
+const closeModalBtn = document.getElementById("closeModalBtn");
+const profileDetails = document.getElementById("profileDetails");
 
-    // Function to render the watchlist
-    function renderWatchlist() {
-        watchlistContainer.innerHTML = ''; // Clear previous items
-        if (watchlist.length === 0) {
-            watchlistContainer.innerHTML = '<p>Your watchlist is empty.</p>';
-            return;
-        }
+let isEditMode = false;
 
-        watchlist.forEach(item => {
-            const listItem = document.createElement('li');
-            listItem.innerHTML = `
-                <span>${item.title}</span>
-                <button class="remove-btn" data-id="${item.id}">Remove</button>
-            `;
-            watchlistContainer.appendChild(listItem);
-        });
+// Toggle edit mode
+editModeBtn.addEventListener("click", () => {
+  isEditMode = !isEditMode;
+  nameInput.disabled = !isEditMode;
+  editModeBtn.textContent = isEditMode ? "Save" : "Edit Mode";
 
-        // Add event listeners to remove buttons
-        document.querySelectorAll('.remove-btn').forEach(button => {
-            button.addEventListener('click', removeFromWatchlist);
-        });
-    }
+  if (!isEditMode) {
+    profileDetails.textContent = `Name: ${nameInput.value}`;
+    popupModal.style.display = "flex";
+  }
+});
 
-    // Function to remove an item from the watchlist
-    function removeFromWatchlist(event) {
-        const contentId = event.target.getAttribute('data-id');
-        watchlist = watchlist.filter(item => item.id !== contentId);
-        localStorage.setItem('watchlist', JSON.stringify(watchlist));
-        renderWatchlist();
-    }
+// Avatar change
+avatar.addEventListener("click", () => {
+  if (isEditMode) {
+    avatarInput.click();
+  }
+});
 
-    // Initial render
-    renderWatchlist();
+avatarInput.addEventListener("change", (event) => {
+  const file = event.target.files[0];
+  if (file) {
+    const reader = new FileReader();
+    reader.onload = (e) => {
+      avatar.src = e.target.result;
+    };
+    reader.readAsDataURL(file);
+  }
+});
+
+// Close modal
+closeModalBtn.addEventListener("click", () => {
+  popupModal.style.display = "none";
 });

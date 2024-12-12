@@ -1,36 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OTT Profile Page</title>
-    <link rel="stylesheet" href="Profile.css">
-    <script src="Profile.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ultra Pro Max Profile Page</title>
+ <link rel="stylesheet" href="Profile.css">
 </head>
 <body>
     <div class="profile-container">
-        <header class="profile-header">
-            <h1>Welcome, <span id="username">Pranesh</span></h1>
-            <a href="#" class="logout-btn">Logout</a>
-        </header>
-
-        <div class="profile-content">
-            <div class="profile-info">
-                <img src="../Daredevil.jpg" alt="Profile Picture" class="profile-pic">
-                <h2>Your Subscription: <span id="subscription-status">Premium</span></h2>
-                <p>Next Billing Date: <span id="billing-date">30th Nov 2024</span></p>
-            </div>
-
-            <div class="watchlist">
-                <h2>Your Watchlist</h2>
-                <ul id="watchlist"></ul>
-            </div>
-
-            <div class="settings">
-                <h2>Account Settings</h2>
-                <a href="EDIT Profile/Edit Profile.html">Edit Profile</a> | <a href="#">Change Password</a> | <a href="#">Manage Subscription</a>
-            </div>
+        <button class="edit-icon" id="editModeBtn">Edit Mode</button>
+        <img
+          src="https://via.placeholder.com/120"
+          alt="User Avatar"
+          class="profile-avatar"
+          id="avatar"
+        />
+        <input type="file" id="avatarInput" accept="image/*">
+        <h1>
+          <input
+            type="text"
+            id="nameInput"
+            class="editable"
+            value="John Doe"
+            disabled
+          />
+        </h1>
+        <p>Edit your profile to update details.</p>
+      </div>
+    
+      <!-- Modal for Advanced Pop-Up -->
+      <div id="popupModal" class="modal">
+        <div class="modal-content">
+          <h2>Profile Updated!</h2>
+          <p id="profileDetails"></p>
+          <button id="closeModalBtn">Close</button>
         </div>
-    </div>
+      </div>
+  <script src="Profile.js"></script>
 </body>
 </html>
